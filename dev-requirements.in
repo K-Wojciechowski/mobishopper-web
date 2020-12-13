@@ -1,0 +1,10 @@
+-c requirements.txt
+-r requirements.txt
+
+django-debug-toolbar
+black
+isort
+pydocstyle
+pre-commit
+ipython
+coverage

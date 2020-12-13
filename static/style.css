@@ -1,0 +1,231 @@
+body {
+    padding-top: 3.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar {
+    padding-top: 1rem;
+    background: var(--light);
+    border-right: 1px solid var(--gray);
+    width: 250px;
+    min-width: 250px;
+    display: flex;
+}
+
+#content-main {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    flex: 1;
+    display: flex;
+}
+
+#content-main-inner, #sidebar-inner {
+    display: block;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#content-main.content-main-fullwidth {
+    display: block;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#content-top {
+    display: flex;
+    flex-grow: 1;
+}
+
+#content-row {
+    display: flex;
+    flex: 1 1 auto;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+#sidebar .nav-link {
+    padding: .5rem 0;
+}
+
+#sidebar h6 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.15rem;
+}
+
+#sidebar .nav-item.active {
+    font-weight: bold;
+}
+
+.iconbox {
+    display: inline-flex;
+    align-items: center;
+}
+
+.iconbox .bi:first-child {
+    margin-right: 0.25rem;
+}
+
+.iconbox .bi:last-child {
+    margin-left: 0.25rem;
+}
+
+.buttonbox {
+    text-align: center;
+}
+
+.vam {
+    vertical-align: middle;
+}
+
+.table.table-vam td, .table.table-vam th {
+    vertical-align: middle;
+}
+
+.ms-pagination ul.pagination {
+    justify-content: center;
+}
+
+.table-header-btn {
+    font-weight: bold;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.mis-image {
+    max-height: 75px;
+    max-width: 75px;
+}
+
+.invisible-input {
+    width: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.comma-separated-links a:not(:last-child)::after {
+    content: ", ";
+}
+
+.vertical-divider {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-box {
+    padding: 1.25rem;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-box .form-inline {
+    justify-content: center;
+    align-content: baseline;
+}
+
+.card-box-top {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    margin-bottom: 1.75rem;
+}
+
+.card-box-bottom {
+    box-shadow: 0 -.5rem 1rem rgba(0,0,0,.15);
+    margin-top: 1.75rem;
+}
+
+.store-map-legend-tile {
+    border: 1px solid black;
+    width: 1rem;
+    min-width: 1rem;
+}
+
+.store-map-legend-tile-blank {
+    width: 1rem;
+    min-width: 1rem;
+}
+
+.store-map-legend-title {
+    padding-left: 1rem;
+}
+
+table.store-map {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    width: 100%;
+    max-height: 150vh;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+table.store-map td {
+    border: 1px solid black;
+    padding: 0;
+    text-align: center;
+}
+
+table.store-map thead th {
+    font-size: 0.75rem !important;
+    line-height: 1rem;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+table.store-map th {
+    font-size: 0.75rem !important;
+    text-align: right;
+}
+
+table.store-map td, table.store-map th {
+    font-size: 0.5rem;
+    line-height: 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    max-width: 1.75rem;
+    max-height: 1.75rem;
+    min-width: 1.75rem;
+    min-height: 1.75rem;
+}
+
+table.store-map-small td, table.store-map-small th {
+    font-size: 0.35rem;
+    line-height: 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    max-width: 1.25rem;
+    max-height: 1.25rem;
+    min-width: 1.25rem;
+    min-height: 1.25rem;
+}
+
+
+table.store-map-large td, table.store-map-large th {
+    font-size: 0.75rem;
+    line-height: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+}
+
+.store-map-legend-tile-cursor {
+    background: white;
+}
+
+.store-map-legend-item.active .store-map-legend-tile {
+    background-image: radial-gradient(circle at center, black 0, white 20%, transparent 30%);
+}
+
+.store-map-legend-item.active .store-map-legend-title {
+    background: #ffeeba;
+}

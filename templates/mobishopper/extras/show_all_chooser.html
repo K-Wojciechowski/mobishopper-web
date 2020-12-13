@@ -1,0 +1,7 @@
+{% load i18n %}
+<div class="d-flex justify-content-center">
+    <div class="btn-group mb-3" role="group" aria-label="{% trans "Show/hide items" %}">
+        <a class="btn btn-outline-primary {% if not show_all %} active{% endif %}" href="?">{% if only_valid %}{% trans "Show only valid" %}{% else %}{% trans "Show only visible" %}{% endif %}</a>
+        <a class="btn btn-outline-primary {% if show_all %} active{% endif %}" href="?all">{% trans "Show all" %}</a>
+    </div>
+</div>

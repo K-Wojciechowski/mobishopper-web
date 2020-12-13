@@ -1,0 +1,11 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+    {% product_add_edit_form form product=None action_input=False %}
+{% endblock %}
+{% block extra_js %}
+    {{ form.media }}
+{% endblock %}

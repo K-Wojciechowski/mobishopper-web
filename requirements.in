@@ -1,0 +1,8 @@
+Django
+Pillow
+django-bootstrap4
+django-bootstrap-datepicker-plus
+djangorestframework
+djangorestframework-simplejwt
+attrs
+cattrs

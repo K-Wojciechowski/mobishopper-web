@@ -1,0 +1,33 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% block content %}
+<form action="{{ action_url }}" method="GET">
+    {% bootstrap_form_errors form type='all' %}
+    {% bootstrap_field form.name layout="horizontal" %}
+    {% bootstrap_field form.vendor layout="horizontal" %}
+    {% bootstrap_field form.description layout="horizontal" %}
+    {% bootstrap_field form.valid_at layout="horizontal" %}
+
+    {% subcat_menu_field form multiple=True required=False %}
+
+    {% if show_product_only_fields %}
+    <div class="form-group row"><label class="col-md-3 col-form-label">{% trans "Properties" %}</label><div class="col-md-9">
+        <div id="search-extra-metadata">{% trans "Loading…" %}</div>
+    </div></div>
+
+    {% bootstrap_field form.is_group layout="horizontal" %}
+    {% endif %}
+
+    {% bootstrap_field form.is_store layout="horizontal" %}
+
+    <div class="buttonbox">
+        <button class="btn btn-lg btn-primary">{% bsiconbox "search" 20 "Search" %}</button>
+    </div>
+</form>
+{% endblock %}
+{% block extra_js %}
+{{ form.media }}
+{% endblock %}

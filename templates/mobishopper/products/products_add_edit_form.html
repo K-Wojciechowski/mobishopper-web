@@ -1,0 +1,39 @@
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% bootstrap_form_errors form type='all' %}
+    {% csrf_token %}
+    {% bootstrap_field form.name layout="horizontal" %}
+    {% bootstrap_field form.price layout="horizontal" %}
+    {% modal_item_selector form.vendor "product-vendor" vendor_name %}
+
+
+    {% subcat_menu_field form multiple=False required=True %}
+
+    <div class="form-group row"><label class="col-md-3 col-form-label" for="{{ form.amount.id_for_label }}">{% trans "Amount" %}</label><div class="col-md-9">
+        <div class="input-group">
+            {{ form.amount }}
+            {{ form.amount_unit }}
+        </div>
+    </div>
+    {% bootstrap_field form.any_amount layout="horizontal" %}
+    </div>
+    {% if request.ms_store is None %}
+        {% bootstrap_field form.store layout="horizontal" %}
+    {% endif %}
+    {% modal_item_selector form.group "product-group" group_name %}
+    {% bootstrap_field form.photo layout="horizontal" %}
+    {% bootstrap_field form.description layout="horizontal" %}
+    <div class="form-group row"><label class="col-md-3 col-form-label">{% trans "Properties" %}</label><div class="col-md-9">
+        <div id="product-extra-metadata">{% trans "Loading…" %}</div>
+    </div></div>
+
+    {% bootstrap_field form.date_started layout="horizontal" %}
+    {% bootstrap_field form.date_ended layout="horizontal" %}
+    {% if action_input %}
+        <input type="hidden" name="action" value="edit">
+    {% endif %}
+    {% buttonbox_save %}
+</form>

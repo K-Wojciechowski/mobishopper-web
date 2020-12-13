@@ -1,0 +1,18 @@
+{% extends "mobishopper/base_external.html" %}
+{% load i18n %}
+{% block body %}
+    <main role="main" id="content-top" class="external-base">
+        <div class="landing-box text-center">
+            {% if not mask %}
+            <h1>MobiShopper</h1>
+            <p class="lead">{% trans "an app to improve your shopping experience" %}</p>
+            <p><a class="btn btn-secondary" href="#">{% trans "Download for Android" %}</a></p>
+            {% endif %}
+            {% if user.is_employee %}
+                <p id="manage-btn"><a class="btn btn-primary" href="{% url "ms_baseline:management_home" %}">{% trans "Manage" %}</a></p>
+            {% else %}
+                <p class="small-link"><a href="{% url "ms_baseline:management_home" %}">{% trans "Log in to manage" %}</a></p>
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}

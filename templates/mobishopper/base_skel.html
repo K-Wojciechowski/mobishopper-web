@@ -1,0 +1,92 @@
+{% load ms_extras %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    {% block extra_head %}
+    {% endblock %}
+
+    {% if title %}
+    <title>{{ title }} — MobiShopper</title>
+    {% else %}
+    <title>MobiShopper</title>
+    {% endif %}
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/">MobiShopper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_main" aria-controls="navbar_main" aria-expanded="false" aria-label="{%trans 'Toggle navigation' %}">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar_main">
+        <ul class="navbar-nav mr-auto">
+            {% render_menu %}
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbar_account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="iconbox">
+                    {% bsicon "shop" 16 %}
+                    {% if ms_store == None and user.is_global_manager %}{% trans "(Global)" %}
+                    {% elif ms_store == None %}{% trans "No permissions" %}
+                    {% else %}{{ ms_store }}{% endif %}
+                </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar_account">
+                    <h6 class="dropdown-header">{% trans "Change store" %}</h6>
+                    {% for usp in ms_permissions %}
+                    <a class="dropdown-item {% if usp.store == ms_store %}active{% endif %}" href="{% url 'ms_baseline:change_store' sid=usp.store.id %}?next={{ ms_next_url }}">{{ usp.store }}</a>
+                    {% empty %}
+                        <span class="dropdown-item">{% trans "No permissions" %}</span>
+                    {% endfor %}
+                      <div class="dropdown-divider"></div>
+                    {% if user.is_global_manager %}
+                        <a class="dropdown-item {% if not ms_store %}active{% endif %}" href="{% url 'ms_baseline:change_store' sid=0 %}?next={{ ms_next_url }}">{% trans "Manage all stores" %}</a>
+                    {% endif %}
+                    <a class="dropdown-item" href="{% url 'ms_baseline:my_permissions' %}">{% trans "Details…" %}</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbar_account" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {% bsiconbox_raw "person" 16 user.get_full_name %}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar_account">
+                    <h6 class="dropdown-header">{{ user.email }}</h6>
+                    <a class="dropdown-item" href="{% url "password_change" %}">{% trans "Change password" %}</a>
+                    <a class="dropdown-item" href="{% url "logout" %}">{% trans "Log out" %}</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main" id="content-top" class="container-fluid">
+    {% block content_top %}
+    {% endblock %}
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+
+{% block extra_js %}
+{% endblock %}
+<script src="/static/ms-basic-ui.js"></script>
+<script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+{% if vue_apps_json %}
+    <script type="text/javascript">let VUE_APPS = {{ vue_apps_json }};</script>
+    <script type="text/javascript" src="/static/vue/chunk-vendors.js"></script>
+    <script type="text/javascript" src="/static/vue/app.js"></script>
+{% endif %}
+{% block js_config %}{% endblock %}
+</body>
+</html>

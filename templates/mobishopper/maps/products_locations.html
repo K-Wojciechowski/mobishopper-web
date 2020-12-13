@@ -1,0 +1,9 @@
+{% extends "mobishopper/base_sidebar.html" %}
+
+{% block content %}
+<form class="d-none">{% csrf_token %}</form>
+<div id="product-locations"></div>
+{% endblock %}
+{% block extra_js %}
+{{ datepicker_form.media }}
+{% endblock %}

@@ -1,0 +1,58 @@
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+<form action="" method="POST">
+    {% bootstrap_form_errors form type='all' %}
+    {% csrf_token %}
+    {% bootstrap_field form.code layout="horizontal" %}
+    {% bootstrap_field form.parent layout="horizontal" %}
+
+    <hr>
+    <div class="form-group row"><label class="col-md-3 col-form-label">{% trans "Select details source" %}</label><div class="col-md-9" aria-describedby="#subaisle_form_copy_global_help">
+        <div><label for="subaisle_form_copy_global_yes"><input type="radio" name="subaisle_form_copy_global" value="yes" id="subaisle_form_copy_global_yes" required {% if copy_global == True %}checked{% endif %}> {% trans "Copy subaisle details from a global subaisle" %}</label></div>
+        <div><label for="subaisle_form_copy_global_no"><input type="radio" name="subaisle_form_copy_global" value="no" id="subaisle_form_copy_global_no" required {% if copy_global == False %}checked{% endif %}> {% trans "Provide custom details" %}</label></div>
+        <small id="subaisle_form_copy_global_help" class="form-text text-muted">{% trans "You can base your subaisle’s details (name, description, subcategories) on a global aisle. Changes to the global aisle will also affect your aisle. If a global aisle is deleted, your subaisle will no longer be linked to it (but it will not be deleted)." %}</small>
+    </div></div>
+
+    <div id="subaisle_form_global">
+        {% bootstrap_field form.generic_subaisle layout="horizontal" %}
+    </div>
+
+    <div id="subaisle_form_local">
+        {% bootstrap_field form.name layout="horizontal" %}
+        {% bootstrap_field form.description layout="horizontal" %}
+        {% subcat_menu_field form multiple=True required=False %}
+    </div>
+    {% buttonbox_save %}
+</form>
+<script>
+    function prepareSubaisleForm() {
+        const glob = document.getElementById("subaisle_form_global");
+        const loc = document.getElementById("subaisle_form_local");
+        {% if copy_global != True %}glob.classList.add("d-none");{% endif %}
+        {% if copy_global != False %}loc.classList.add("d-none");{% endif %}
+        registerActivatorRadio("subaisle_form_copy_global", "yes", "subaisle_form_global", "show");
+        registerActivatorRadio("subaisle_form_copy_global", "yes", "subaisle_form_local", "hide");
+        registerActivatorRadio("subaisle_form_copy_global", "no", "subaisle_form_local", "show");
+        registerActivatorRadio("subaisle_form_copy_global", "no", "subaisle_form_global", "hide");
+
+        function setGlobLoc(globRequired) {
+            glob.getElementsByTagName("select")[0].required = globRequired;
+            const locInputs = loc.getElementsByTagName("input");
+            for (let i = 0; i < locInputs.length; i++) {
+                locInputs[i].required = !globRequired;
+            }
+        }
+
+        document.getElementById("subaisle_form_copy_global_yes").addEventListener("change", function () {
+            setGlobLoc(true);
+        });
+        document.getElementById("subaisle_form_copy_global_no").addEventListener("change", function () {
+            setGlobLoc(false);
+        });
+        {% if copy_global == True %}setGlobLoc(true);{% endif %}
+        {% if copy_global == False %}setGlobLoc(false);{% endif %}
+    }
+    {% if run_js %}prepareSubaisleForm();{% endif %}
+</script>

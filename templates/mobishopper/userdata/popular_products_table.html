@@ -1,0 +1,28 @@
+{% load i18n %}
+{% load ms_extras %}
+{% if not products %}
+{% no_results_msg %}
+{% else %}
+<table class="table table-hover table-vam">
+    <thead>
+    <tr>
+        <th>{% trans "Product" %}</th>
+        <th>{% trans "Vendor" %}</th>
+        <th>{% trans "Price" %}</th>
+        <th>{% trans "Last 7 days" %}</th>
+        <th>{% trans "Last 24 hours" %}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in products %}
+        <tr>
+            <td>{{ p.html_link }}</td>
+            <td><a href="{% url "ms_products:vendors_show" p.vendor.id %}">{{ p.vendor }}</a></td>
+            <td>{% money p.price %}</td>
+            <td>{{ p.last_7d }}</td>
+            <td>{{ p.last_24h }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endif %}

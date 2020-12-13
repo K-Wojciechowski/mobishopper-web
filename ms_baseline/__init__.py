@@ -1,0 +1,1 @@
+"""Baseline module for MobiShopper."""

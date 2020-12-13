@@ -1,0 +1,16 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    <form action="" method="POST">
+        {% bootstrap_form_errors form type='all' %}
+        {% csrf_token %}
+        {% bootstrap_field form.name layout="horizontal" %}
+        {% subcat_menu_field form multiple=True required=True %}
+        {% bootstrap_field form.description layout="horizontal" %}
+
+        {% buttonbox_save %}
+    </form>
+{% endblock %}

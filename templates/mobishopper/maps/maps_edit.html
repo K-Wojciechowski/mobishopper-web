@@ -1,0 +1,63 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% block content %}
+    {% if new_has_existing %}
+        <div class="alert alert-warning">
+            {% blocktrans %}<strong>Warning:</strong> Maps already exist for this store. If you create a new map instead of editing the current map, product locations will not be copied over.{% endblocktrans %}
+        </div>
+    {% endif %}
+    {% if not_latest %}
+        <div class="alert alert-warning">
+            {% blocktrans %}<strong>Warning:</strong> Newer maps exist for this store. Changes made in the newer maps might be overridden, and product locations might be changed incorrectly.{% endblocktrans %}
+        </div>
+    {% endif %}
+    <p>
+        {% blocktrans %}<strong>Hint:</strong> To start creating a map, set the desired map size at the bottom of the page and click <em>Resize</em>. Then you can select tile types from the right pane and click on tiles to make them represent a given subaisle or special tile. Further hints are available below the editor.{% endblocktrans %}
+    </p>
+    <form class="d-none">{% csrf_token %}</form>
+    <div id="map-show-edit"></div>
+    <div class="accordion mt-4" id="mapEditorHelp">
+        <div class="card">
+            <div class="card-header" id="headingHow">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseHow" aria-expanded="false" aria-controls="collapseHow">
+                        {% trans "How to create a map?" %}
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseHow" class="collapse" aria-labelledby="headingHow" data-parent="#mapEditorHelp">
+                <div class="card-body">
+                    <p>{% blocktrans %}To create a map, start with a detailed floor plan of the store. Draw a grid on top of it. Select a grid size that fits the plan best. The grid should be mostly consistent. A good grid size is 0.5-1 m. The grid does not have to be square, but it will be presented as such to users.{% endblocktrans %}</p>
+                    <p>{% blocktrans %}A good map uses Subaisle tiles extensively, with enough spaces around them. When converting the map for the editor, note that shelves (subaisles and product location tiles) are accesible from all space blocks around them. A typical shelf is best represented by <em>space | subaisle 1 | subaisle 2 | space</em>. Other tile types can also help customers walk around the store.{% endblocktrans %}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSpecial">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSpecial" aria-expanded="false" aria-controls="collapseSpecial">
+                        {% trans "Special tiles and their meaning" %}
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseSpecial" class="collapse" aria-labelledby="headingSpecial" data-parent="#mapEditorHelp">
+                <div class="card-body">
+                    <p>{% trans "The following tile types are available:" %}</p>
+                    <ul>
+                        <li>{% trans "Entrance — the entrance to the store, routes might begin at one of those tiles." %}</li>
+                        <li>{% trans "Exit — the exit of the store, routes might end at one of those tiles." %}</li>
+                        <li>{% trans "Entrance + Exit — routes might start and end at one of those tiles." %}</li>
+                        <li>{% trans "Cash register — routes might end at or involve one of those tiles." %}</li>
+                        <li>{% trans "Product shelf (without subaisle) — a tile that can contain products not placed in a subaisle. Products can be assigned with the Product Locations editor." %}</li>
+                        <li>{% trans "Space between aisles — customers can walk on those tiles and access nearby shelves." %}</li>
+                        <li>{% trans "Inaccessible — tiles not accessible to customers, useful if the store is not a rectangular shape." %}</li>
+                    </ul>
+                    <p>{% trans "Routes start at the first product on the list, or at an entrance. Routes end at the last product, cash register, or an exit." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    {{ datepicker_form.media }}
+{% endblock %}

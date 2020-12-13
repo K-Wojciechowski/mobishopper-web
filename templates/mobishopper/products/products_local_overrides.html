@@ -1,0 +1,49 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    {% show_all_chooser show_all %}
+
+    {% if not overrides %}
+        {% no_results_msg %}
+    {% else %}
+        <table class="table table-hover table-vam">
+            <thead>
+            <tr>
+                <th>{% trans "Product" %}</th>
+                <th>{% trans "Available" %}</th>
+                <th>{% trans "Price" %}</th>
+                <th>{% trans "Validity" %}</th>
+                <th>{% trans "Note" %}</th>
+                <th>{% trans "Actions" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for o in overrides %}
+                <tr>
+                    <td>{{ o.product.html_link }} {% if o.product.replaced_by %}{% trans "(has replacement)" %}{% endif %}</td>
+                    <td>{% bool_yesno o.available %}</td>
+                    <td>{% if o.price %}<s>{% money o.product.price %}</s> {% money o.price %}{% else %}<i>{% money o.product.price %}</i>{% endif %}</td>
+                    <td>{% validity_text o %}</td>
+                    <td>{{ o.note }}</td>
+                <td>
+                    <a class="btn btn-outline-primary" href="{% url "ms_products:show_edit" o.product.id %}">{% trans "Show" %}</a>
+                    <a class="btn btn-outline-primary" href="{% url "ms_products:show_edit" o.product.id %}#edit-local">{% trans "Edit override" %}</a>
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    {% paginator overrides %}
+
+    <p class="text-muted">
+        {% url "ms_products:list" as list_url %}
+        {% url "ms_products:search" as search_url %}
+        {% blocktrans %}
+        To add a local override, use the <a href="{{ list_url }}">Products List</a> or <a href="{{ search_url }}">Products Search</a>. The product information page will offer you to add an override, or change an existing one.
+        {% endblocktrans %}
+        </p>
+{% endblock %}

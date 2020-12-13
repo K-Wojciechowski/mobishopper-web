@@ -1,0 +1,30 @@
+{% load i18n %}
+{% load ms_extras %}
+{% if not coupons %}
+{% no_results_msg %}
+{% else %}
+<table class="table table-hover table-vam">
+    <thead>
+    <tr>
+        <th>{% trans "Name" %}</th>
+        <th>{% trans "Product" %}</th>
+        <th>{% trans "Is global" %}</th>
+        <th>{% trans "Validity" %}</th>
+        <th>{% trans "Last 7 days" %}</th>
+        <th>{% trans "Last 24 hours" %}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for d in coupons %}
+        <tr>
+            <td>{{ d.html_link }}</td>
+            <td>{{ d.product.html_link }}</td>
+            <td>{% bool_yesno d.is_global %}</td>
+            <td>{% validity_text d %}</td>
+            <td>{{ d.last_7d }}</td>
+            <td>{{ d.last_24h }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endif %}

@@ -1,0 +1,24 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load ms_extras %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form_errors form type='all' %}
+        {% bootstrap_field form.email %}
+        {% bootstrap_field form.action %}
+        <div id="form_access" class="d-none">
+            {% bootstrap_field form.access_local %}
+        </div>
+        <p>{% trans "Removing permissions does not affect other stores. The user will lose access to the management panel if permissions are removed and they cannot manage any other stores. To see current permissions, edit the account settings." %}</p>
+
+        {% buttonbox_save %}
+    </form>
+
+{% endblock %}
+{% block js_config %}
+    <script>
+        registerActivatorRadio("action", "local_manager", "form_access");
+    </script>
+{% endblock %}

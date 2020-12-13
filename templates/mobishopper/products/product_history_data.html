@@ -1,0 +1,16 @@
+{% load i18n %}
+{% load ms_extras %}
+<dl class="row">
+    <dt class="col-sm-3">{% trans "Date added" %}</dt>
+    <dd class="col-sm-9"><a href="{% url 'ms_products:show_edit' product.id %}">{{ product.date_added|date:"DATETIME_FORMAT" }}</a></dd>
+    <dt class="col-sm-3">{% trans "Name" %}</dt>
+    <dd class="col-sm-9">{{ product.name }}</dd>
+    <dt class="col-sm-3">{% trans "Price" %}</dt>
+    <dd class="col-sm-9">{% money product.price %}</dd>
+    <dt class="col-sm-3">{% trans "Price/amount" %}</dt>
+    <dd class="col-sm-9">{{ product.price_per_amount_str }}</dd>
+    <dt class="col-sm-3">{% trans "Valid from" %}</dt>
+    <dd class="col-sm-9">{{ product.date_started|date:"DATETIME_FORMAT" }}</dd>
+    <dt class="col-sm-3">{% trans "Valid until" %}</dt>
+    <dd class="col-sm-9">{{ product.date_ended|date:"DATETIME_FORMAT" }}</dd>
+</dl>

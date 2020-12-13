@@ -1,0 +1,16 @@
+{% extends "mobishopper/base_fullwidth.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% block content %}
+<form action="" method="POST">
+{% csrf_token %}
+<p class="text-center" style="font-size: 1.5em;">{% blocktrans %}Are you sure you want to delete {{ obj }}?{% endblocktrans %}</p>
+{% if extra_text %}
+    <p class="text-center">{{ extra_text }}</p>
+{% endif %}
+<p class="text-center">
+    <button name="confirm" type="submit" class="btn btn-lg btn-danger">{% bsiconbox "trash" 16 "Yes" %}</button>
+    <a href="{{ cancel_url }}" class="btn btn-lg btn-secondary">{% trans "No" %}</a>
+</p>
+</form>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load msd_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+    {% if show_local_override %}
+        {% bootstrap_form_errors local_override_form type='all' %}
+        {% if product_override %}
+            {% bootstrap_form_errors local_override_dates_form type='all' %}
+        {% endif %}
+    {% endif %}
+    {% if show_editing_pane %}
+        {% bootstrap_form_errors edit_form type='all' %}
+    {% endif %}
+    <ul class="nav nav-tabs mb-3" id="product-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true">{% trans "Details" %}</a>
+        </li>
+        {% if show_local_override %}
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="edit-local-tab" data-toggle="tab" href="#edit-local" role="tab" aria-controls="edit">{% trans "Edit local overrides" %}</a>
+            </li>
+        {% elif show_editing_pane %}
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="edit-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="edit">{% trans "Edit" %}</a>
+            </li>
+        {% endif %}
+        {% if show_deals and ms_store is None %}
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="deals-tab" data-toggle="tab" href="#deals" role="tab" aria-controls="deals">{% trans "Deals" %}</a>
+            </li>
+        {% elif show_deals %}
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="deals-tab" data-toggle="tab" href="#deals" role="tab" aria-controls="deals">{% trans "Deals in store" %}</a>
+            </li>
+        {% endif %}
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history">{% trans "History" %}</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="details" role="tabpanel" aria-labelledby="details-tab">
+            <div class="row">
+                <div class="col-md-9 col-lg-10">{{ product.description }}</div>
+                <div class="col-md-3 col-lg-2">{% if product.photo %}<img class="img-fluid" src="{{ product.photo.url }}" alt="{{ product.title }}">{% endif %}</div>
+            </div>
+            <hr>
+            <h2>{% trans "Details" %}</h2>
+            <dl class="row">
+                {% if product_override and not product_override.available %}
+                    <dt class="col-sm-3">{% trans "Status" %}</dt>
+                    <dd class="col-sm-9 text-danger">{% trans "Unavailable in store" %}</dd>
+                {% endif %}
+                {% if product.store is not None %}
+                    <dt class="col-sm-3">{% trans "Store" %}</dt>
+                    <dd class="col-sm-9">{{ product.store }}</dd>
+                {% endif %}
+
+                <dt class="col-sm-3">{% trans "Vendor" %}</dt>
+                <dd class="col-sm-9">{{  product.vendor.html_link }}</dd>
+
+                {% if product.group is not None %}
+                    <dt class="col-sm-3">{% trans "Group" %}</dt>
+                    <dd class="col-sm-9">{{ product.group.html_link }}</dd>
+                {% endif %}
+
+                <dt class="col-sm-3">{% trans "Subcategory" %}</dt>
+                <dd class="col-sm-9">{{ product.subcategory.full_path_html }}</dd>
+
+                <dt class="col-sm-3">{% trans "Price" %}</dt>
+                <dd class="col-sm-9">
+                    {% if product_override and product_override.price != product_override.price %}
+                        <del>{% money product.price %}</del> {% money product_override.price %}
+                    {% else %}
+                        {% money product.price %}
+                    {% endif %}
+                </dd>
+
+                <dt class="col-sm-3">{% trans "Amount" %}</dt>
+                <dd class="col-sm-9">{{ product.amount_str }} {% if product.any_amount %}{% trans "(/any)" %}{% endif %}</dd>
+
+                <dt class="col-sm-3">{% trans "Price/amount" %}</dt>
+                <dd class="col-sm-9">{{ product.price_per_amount_str }}</dd>
+
+                <dt class="col-sm-3">{% trans "Valid from" %}</dt>
+                <dd class="col-sm-9">{{ product.date_started|date:"DATETIME_FORMAT" }}</dd>
+
+                <dt class="col-sm-3">{% trans "Valid until" %}</dt>
+                <dd class="col-sm-9">{{ product.date_ended|date:"DATETIME_FORMAT" }}</dd>
+            </dl>
+            <hr>
+            {% if product.has_extra_metadata %}
+                <h2>{% trans "Properties" %}</h2>
+                <dl class="row">
+                    {% for k, v in product.extra_metadata_tuples %}
+                        <dt class="col-sm-3">{{ k }}</dt>
+                        <dd class="col-sm-9">{{ v }}</dd>
+                    {% endfor %}
+                </dl>
+            {% endif %}
+
+        </div>
+        {% if show_local_override %}
+            <div class="tab-pane" id="edit-local" role="tabpanel" aria-labelledby="edit-local-tab">
+                {% if product_override %}
+                    <h2>{% trans "Current overrides" %}</h2>
+
+                    <dl class="row">
+                        <dt class="col-sm-3">{% trans "Available" %}</dt>
+                        <dd class="col-sm-9">{% if product_override.available %}{% trans "yes" %}{% else %}{% trans "no" %}{% endif %}</dd>
+                        <dt class="col-sm-3">{% trans "Price" %}</dt>
+                        <dd class="col-sm-9">{% money product_override.price %}</dd>
+                        <dt class="col-sm-3">{% trans "Note" %}</dt>
+                        <dd class="col-sm-9">{{ product_override.note }}</dd>
+                        <dt class="col-sm-3">{% trans "Valid from" %}</dt>
+                        <dd class="col-sm-9">{{ product_override.date_started|date:"DATETIME_FORMAT" }}</dd>
+                        <dt class="col-sm-3">{% trans "Valid until" %}</dt>
+                        <dd class="col-sm-9">{{ product_override.date_ended|date:"DATETIME_FORMAT" }}</dd>
+                    </dl>
+                    <h2>{% trans "Change validity dates" %}</h2>
+                    <form action="" method="POST">
+                        {% bootstrap_form_errors local_override_dates_form type='all' %}
+                        {% csrf_token %}
+                        {% bootstrap_field local_override_dates_form.date_started layout="horizontal" %}
+                        {% bootstrap_field local_override_dates_form.date_ended layout="horizontal" %}
+
+                        <input type="hidden" name="action" value="local_override_dates">
+                        {% buttonbox_save %}
+                    </form>
+
+                {% else %}
+                    <p>{% trans "No overrides in effect." %}</p>
+                {% endif %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <h2>{% trans "New local override" %}</h2>
+                    {% bootstrap_form_errors local_override_form type='all' %}
+
+                    {% bootstrap_field local_override_form.price layout="horizontal" %}
+                    {% bootstrap_field local_override_form.note layout="horizontal" %}
+                    {% bootstrap_field local_override_form.available layout="horizontal" show_label=True %}
+                    {% bootstrap_field local_override_form.date_started layout="horizontal" %}
+                    {% bootstrap_field local_override_form.date_ended layout="horizontal" %}
+
+                    <input type="hidden" name="action" value="local_override">
+                    {% buttonbox_save %}
+                </form>
+            </div>
+        {% endif %}
+        {% if show_editing_pane %}
+        <div class="tab-pane" id="edit" role="tabpanel" aria-labelledby="edit-tab">
+            {% product_add_edit_form edit_form product action_input=True %}
+        </div>
+        {% endif %}
+        <div class="tab-pane" id="deals" role="tabpanel" aria-labelledby="deals-tab">
+            <h2>{% trans "Deals" %} <a class="btn btn-outline-success" href="{% url "ms_deals:deals_add" %}?product={{ product.id }}">{% trans "Add deal" %}</a></h2>
+                {% deals_table deals request show_order=False %}
+            <h2>{% trans "Coupons" %} <a class="btn btn-outline-success" href="{% url "ms_deals:coupons_add" %}?product={{ product.id }}">{% trans "Add coupon" %}</a></h2>
+                {% deals_table coupons request show_order=False %}
+            </div>
+        <div class="tab-pane" id="history" role="tabpanel" aria-labelledby="history-tab">
+            {% if product.replaced_by %}
+                <h2>{% if product.replaced_by.replaced_by %}{% trans "Next version" %}{% else %}{% trans "Next version (current)" %}{% endif %}</h2>
+                {% product_history_data product.replaced_by %}
+            {% endif %}
+            <h2>{% if product.replaced_by %}{% trans "This version" %}{% else %}{% trans "This version" %}{% endif %}</h2>
+            {% product_history_data product %}
+            {% if product_replacement_of %}
+            <h2>{% trans "Previous version" %}</h2>
+                {% product_history_data product_replacement_of %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    {% if show_editing_pane %}
+        {{ edit_form.media }}
+    {% elif show_local_override %}
+        {{ local_override_form.media }}
+    {% endif %}
+{% endblock %}
+{% block js_config %}
+    {% if show_editing_pane %}
+        <script>showTabFromFragment();</script>
+    {% endif %}
+{% endblock %}

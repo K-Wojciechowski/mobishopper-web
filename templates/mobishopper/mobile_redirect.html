@@ -1,0 +1,14 @@
+{% extends "mobishopper/base_external.html" %}
+{% load i18n %}
+{% block body %}
+    <main role="main" id="content-top" class="external-base">
+        <div class="landing-box text-center">
+            <h1>{% trans "Redirecting to MobiShopper…" %}</h1>
+            <p>{% trans "You will be redirected to the MobiShopper app shortly, if the app is installed." %}</p>
+            <p><a class="btn btn-secondary" href="#">{% trans "Download for Android" %}</a></p>
+        </div>
+    </main>
+    <script>
+    setTimeout(function() {window.location = "{{link}}"}, 2500);
+    </script>
+{% endblock %}

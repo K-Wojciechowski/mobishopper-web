@@ -1,0 +1,9 @@
+{% extends "mobishopper/base_fullwidth.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msu_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    {% popular_products_table page %}
+    {% paginator page %}
+{% endblock %}

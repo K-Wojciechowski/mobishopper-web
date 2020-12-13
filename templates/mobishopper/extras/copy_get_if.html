@@ -1,0 +1,8 @@
+{% if condition %}
+    <form action="" method="GET">
+        {% for k, v in request.GET.items %}
+            {% if k != "order" %}
+                <input type="hidden" name="{{ k }}" value="{{ v }}">
+            {% endif %}
+        {% endfor %}
+{% endif %}

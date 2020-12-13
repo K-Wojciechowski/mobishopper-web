@@ -1,0 +1,7 @@
+<div class="form-group row"><label class="col-md-3 col-form-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="col-md-9">
+    {{ field.errors }}
+    <div id="{{ js_id }}">{{ fallback }}</div>
+    {% if field.help_text %}
+    <small id="{{ field.id_for_label }}_help" class="form-text text-muted">{{ field.help_text }}</small>
+    {% endif %}
+</div></div>

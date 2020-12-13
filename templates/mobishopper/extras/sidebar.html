@@ -1,0 +1,22 @@
+{% load i18n %}
+<h5>{{ sidebar.title }}</h5>
+{% for group in sidebar.groups %}
+    {% if group.visible %}
+        {% if group.heading %}
+            <h6>{{ group.heading }}</h6>
+        {% endif %}
+        <ul class="nav flex-column">
+        {% for item in group.items %}
+            {% if item.visible and current_view == item.dest %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url item.dest %}">{{ item.title }} <span class="sr-only">{% trans "(current)" %}</span></a>
+                </li>
+            {% elif item.visible %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url item.dest %}">{{ item.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}

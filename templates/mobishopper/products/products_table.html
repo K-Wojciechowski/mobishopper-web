@@ -1,0 +1,34 @@
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% if not products %}
+    {% no_results_msg %}
+{% else %}
+{% start_copy_get_if show_order request %}
+<table class="table table-hover table-vam">
+    <thead>
+    <tr>
+        <th>{% table_ord_helper "Product" "name" True %}</th>
+        <th>{% table_ord_helper "Vendor" "vendor" %}</th>
+        <th>{% table_ord_helper "Validity" "date_started" %}</th>
+        <th>{% table_ord_helper "Price" "price" %}</th>
+        <th>{% trans "Actions" %}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in products %}
+        <tr>
+            <td>{{ p.html_link }}</td>
+            <td><a href="{% url "ms_products:vendors_show" p.vendor.id %}">{{ p.vendor }}</a></td>
+            <td>{% validity_text p %}</td>
+            <td>{% money p.price %}</td>
+            <td>
+                <a class="btn btn-outline-primary" href="{% url "ms_products:show_edit" p.id %}">{% trans "Show" %}</a>
+                <a class="btn btn-outline-info" href="{% url "ms_products:show_edit" p.id %}#edit">{% trans "Edit" %}</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% close_copy_get_if show_order %}
+{% endif %}

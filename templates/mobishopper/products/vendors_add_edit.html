@@ -1,0 +1,28 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% bootstrap_form_errors form type='all' %}
+    {% csrf_token %}
+    {% bootstrap_field form.name layout="horizontal" %}
+    {% bootstrap_field form.logo layout="horizontal" %}
+    {% bootstrap_field form.website layout="horizontal" %}
+
+    {% if request.ms_store is None %}
+        {% bootstrap_field form.store layout="horizontal" %}
+    {% endif %}
+    {% bootstrap_field form.description layout="horizontal" %}
+    {% bootstrap_field form.date_started layout="horizontal" %}
+    {% bootstrap_field form.date_ended layout="horizontal" %}
+    {% if show_edit_warning %}
+        <p class="text-warning">{% trans "<strong>Warning:</strong> Editing a vendor will create new revisions of all currently valid products of the vendor. Those revisions will have the same start date as the vendor." %}</p>
+    {% endif %}
+    {% buttonbox_save %}
+</form>
+{% endblock %}
+{% block extra_js %}
+    {{ form.media }}
+{% endblock %}

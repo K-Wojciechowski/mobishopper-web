@@ -1,0 +1,34 @@
+{% extends "mobishopper/base_external.html" %}
+{% load ms_extras %}
+{% load i18n %}
+{% block body %}
+    <main role="main" id="content-top" class="external-base">
+        <div class="shopping-list-box">
+            <h1>{{ shopping_list.name }}</h1>
+            {% if owner %}
+                <p class="text-center">{% blocktrans %}A shopping list by {{ owner }}{% endblocktrans %}</p>
+            {% endif %}
+            <table class="table shopping-list-table">
+                {% for e in shopping_list_entries %}
+                    <tr>
+                        <td rowspan="2" class="shopping-list-table-photo">
+                            {% if e.product.photo %}
+                                <img src="{{ e.product.photo.url }}" alt="{{ e.product }}" class="shopping-list-photo">
+                            {% endif %}
+                        </td>
+                        <td colspan="2" class="shopping-list-table-title product-name">{{ e.product }}</td>
+                        <td class="shopping-list-table-right bought-checkmark">{% if e.bought %}✔{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td class="shopping-list-table-left vendor">{{ e.product.vendor }}</td>
+                        <td class="shopping-list-table-middle amount">{{ e.product.amount_str }}</td>
+                        <td class="shopping-list-table-right price">{% money e.product.price %}{% if e.amount != 1 %} ({% format_decimal e.amount %}×){% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <hr>
+            <div class="text-center"><a href="/"><strong>MobiShopper</strong><br>
+                {% trans "an app to improve your shopping experience" %}</a></div>
+        </div>
+    </main>
+{% endblock %}

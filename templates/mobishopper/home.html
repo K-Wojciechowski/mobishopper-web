@@ -1,0 +1,42 @@
+{% extends "mobishopper/base_fullwidth.html" %}
+{% load i18n %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <strong>{% trans "Products" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ product_count }}</strong>
+        </div>
+        {% if request.ms_store is None %}
+            <div class="col-md-4">
+                <strong>{% trans "Users" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ user_count }}</strong>
+            </div>
+            <div class="col-md-4">
+                <strong>{% trans "Stores" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ store_count }}</strong>
+            </div>
+        {% else %}
+            <div class="col-md-4">
+                <strong>{% trans "Products in store" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ products_in_store }}</strong>
+            </div>
+            <div class="col-md-4">
+                <strong>{% trans "Products without location" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ products_without_location }}</strong>
+            </div>
+        {% endif %}
+
+        <div class="col-md-4">
+            <strong>{% trans "Deals and coupons in effect" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ deals_coupons }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Coupons used in last 7 days" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ coupons_7d }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Recent shopping lists" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ shopping_lists_7d }}</strong>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "mobishopper/base_external.html" %}
+{% load i18n %}
+{% block body %}
+    <main role="main" id="content-top" class="external-base">
+        <div class="login-box">
+<h1 class="mb-3">{% trans "Forbidden" %}</h1>
+            <p class="text-center">{% trans "You do not have access to this page." %} <a class="btn btn-sm btn-outline-primary" style="vertical-align:baseline;" href="{% url 'login' %}">{% trans "Log in" %}</a></p>
+        </div>
+    </main>
+{% endblock %}

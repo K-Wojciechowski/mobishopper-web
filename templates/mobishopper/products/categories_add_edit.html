@@ -1,0 +1,24 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+<form action="" method="POST">
+    {% bootstrap_form_errors form type='all' %}
+    {% csrf_token %}
+    {% bootstrap_field form.name layout="horizontal" %}
+    {% bootstrap_field form.description layout="horizontal" %}
+    {% bootstrap_field form.visible layout="horizontal" %}
+    {% buttonbox_save %}
+</form>
+{% if subcategories %}
+<hr>
+<h2>{% trans "Subcategories" %}</h2>
+<ul>
+    {% for subcat in subcategories %}
+    <li>{{ subcat.html_link }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

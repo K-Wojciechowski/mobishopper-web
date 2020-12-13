@@ -1,0 +1,53 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <strong>{% trans "Deals in effect" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ deals_in_effect }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Coupons in effect" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ coupons_in_effect }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Coupon sets in effect" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ coupon_sets_in_effect }}</strong>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>{% trans "Coupons used in last 24 hours" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ coupons_last_24h }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Coupons used in last 7 days" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ coupons_last_7d }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Coupon sets used in last 7 days" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ coupon_sets_last_7d }}</strong>
+        </div>
+    </div>
+
+    {% if ms_store is not None %}
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <strong>{% trans "Coupons used in store in last 24 hours" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ coupons_store_last_24h }}</strong>
+            </div>
+            <div class="col-md-4">
+                <strong>{% trans "Coupons used in store in last 7 days" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ coupons_store_last_7d }}</strong>
+            </div>
+            <div class="col-md-4">
+                <strong>{% trans "Coupon sets used in store in last 7 days" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ coupon_sets_store_last_7d }}</strong>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

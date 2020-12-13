@@ -1,0 +1,56 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form_errors form type='all' %}
+        {% bootstrap_field form.email layout="horizontal" %}
+        {% bootstrap_field form.first_name layout="horizontal" %}
+        {% bootstrap_field form.last_name layout="horizontal" %}
+
+        {% if is_adding %}
+            {% bootstrap_field form.new_password1 layout="horizontal" %}
+            {% bootstrap_field form.new_password2 layout="horizontal" %}
+        {% else %}
+            <h2>{% trans "Actions" %}</h2>
+            {% if id == user.id %}
+                <a class="btn btn-secondary" href="{% url 'password_change' %}">{% bsiconbox "key" 12 "Change your password" %}</a>
+            {% else %}
+                <a class="btn btn-secondary" href="{% url 'ms_baseline:users_reset_password' id %}">{% bsiconbox "key" 12 "Reset password" %}</a>
+            {% endif %}
+            <a class="btn btn-danger" href="{% url 'ms_baseline:users_delete' id %}">{% bsiconbox "trash" 12 "Delete" %}</a>
+        {% endif %}
+
+        <h2>{% trans "Groups" %}</h2>
+        {% check_radio_field form.is_manager %}
+        {% check_radio_field form.is_global_manager %}
+        {% check_radio_field form.is_superuser %}
+        <div id="local_permissions" class="{% if not form.is_manager.value %}d-none{% endif %}">
+            <h2>{% trans "Local permissions" %}</h2>
+            <div id="vue-app-local-permissions">
+                {% trans "Loading…" %}
+            </div>
+        </div>
+
+        <div id="global_permissions" class="{% if not form.is_global_manager.value %}d-none{% endif %}">
+            <h2>{% trans "Global permissions" %}</h2>
+            {% check_radio_field form.can_manage_global_products %}
+            {% check_radio_field form.can_manage_global_deals %}
+            {% check_radio_field form.can_view_global_statistics %}
+            {% check_radio_field form.can_manage_users %}
+            {% check_radio_field form.can_manage_stores %}
+        </div>
+
+        {% buttonbox_save %}
+    </form>
+{% endblock %}
+{% block js_config %}
+    {% if not is_adding %}
+        <script>
+            registerActivatorCheckbox("is_manager", "local_permissions");
+            registerActivatorCheckbox("is_global_manager", "global_permissions");
+        </script>
+    {% endif %}
+{% endblock %}

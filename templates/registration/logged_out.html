@@ -1,0 +1,12 @@
+{% extends "mobishopper/base_external.html" %}
+{% load i18n %}
+{% block body %}
+
+    <main role="main" id="content-top" class="external-base">
+        <div class="login-box">
+            <h1 class="mb-3">{% trans "Logged out" %}</h1>
+
+            <p class="text-center"><a class="btn btn-primary btn-lg" href="{% url 'login' %}">{% trans "Log in" %}</a></p>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load i18n %}
+
+{% block content %}
+    <h5>{% trans "Result" %}</h5>
+    <p class="lead">{% blocktrans %}Products with missing locations: <strong>{{ missing }}</strong>{% endblocktrans %}</p>
+    <hr>
+    <h5>{% trans "Log" %}</h5>
+    {{ assign_log }}
+{% endblock %}

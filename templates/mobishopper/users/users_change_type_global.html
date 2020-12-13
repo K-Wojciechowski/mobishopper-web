@@ -1,0 +1,27 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load ms_extras %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form_errors form type='all' %}
+        {% bootstrap_field form.email %}
+        {% bootstrap_field form.action %}
+        <div id="form_access" class="d-none">
+            {% bootstrap_field form.access %}
+        </div>
+        <p>{% trans "If you choose to remove all permissions, the user will not have access to the management panel. If you choose a lower permission level, the user will lose access to some parts of the interface. To edit store-level permissions, or to see current permissions, edit the account settings." %}</p>
+
+        {% buttonbox_save %}
+    </form>
+
+{% endblock %}
+{% block js_config %}
+    <script>
+        registerActivatorRadio("action", "remove_all", "form_access", "hide");
+        registerActivatorRadio("action", "local_manager", "form_access", "hide");
+        registerActivatorRadio("action", "global_manager", "form_access", "show");
+        registerActivatorRadio("action", "full_manager", "form_access", "show");
+    </script>
+{% endblock %}

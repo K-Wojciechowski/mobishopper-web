@@ -1,0 +1,57 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="card-box card-box-top">
+        <form class="form-inline" action="" method="GET">
+            {% inline_form_field search_form.name %}
+            <div class="d-flex">
+                <label class="mr-2" for="{{ search_form.valid_at.id_for_label }}">{% trans "Valid at:" %}</label>
+                {{ search_form.valid_at }}
+            </div>
+            <div class="d-inline-block ml-2 mr-2">
+                {% check_radio_field search_form.is_store %}
+            </div>
+            <button class="btn btn-secondary">{% bsiconbox "search" 12 "Search" %}</button>
+        </form>
+    </div>
+
+    {% if not vendors %}
+        {% no_results_msg %}
+    {% else %}
+        {% start_copy_get_if show_order request %}
+        <table class="table table-hover table-vam">
+            <thead>
+            <tr>
+                <th>{% table_ord_helper "Vendor" "vendor" %}</th>
+                <th>{% table_ord_helper "Validity" "date_started" %}</th>
+                <th>{% trans "Is store-specific" %}</th>
+                <th>{% trans "Actions" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for v in vendors %}
+                <tr>
+                    <td>{{ v.html_link }}</td>
+                    <td>{% validity_text v %}</td>
+                    <td>{% bool_yesno v.is_store_specific %}</td>
+                    <td>
+                        <a class="btn btn-outline-primary" href="{% url "ms_products:vendors_show" v.id %}">{% trans "Show products" %}</a>
+                        {% if request.ms_store is None or v.store == request.ms_store %}
+                        <a class="btn btn-outline-info" href="{% url "ms_products:vendors_edit" v.id %}#edit">{% trans "Edit" %}</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% close_copy_get_if show_order %}
+
+        {% paginator vendors %}
+    {% endif %}
+{% endblock %}
+{% block extra_js %}
+    {{ search_form.media }}
+{% endblock %}

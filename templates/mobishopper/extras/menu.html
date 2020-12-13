@@ -1,0 +1,12 @@
+{% load i18n %}
+{% for item in menu %}
+    {% if item.visible and current_app == item.app %}
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url item.dest %}">{{ item.title }} <span class="sr-only">{% trans "(current)" %}</span></a>
+        </li>
+    {% elif item.visible %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url item.dest %}">{{ item.title }}</a>
+        </li>
+    {% endif %}
+{% endfor %}

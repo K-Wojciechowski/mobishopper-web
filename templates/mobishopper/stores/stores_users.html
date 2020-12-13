@@ -1,0 +1,33 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    {% if not users %}
+        {% no_results_msg %}
+    {% else %}
+    <table class="table table-hover table-vam">
+        <thead>
+        <tr>
+            <th>{% trans "E-mail" %}</th>
+            <th>{% trans "First name" %}</th>
+            <th>{% trans "Last name" %}</th>
+            <th>{% trans "Actions" %}</th>
+        </tr>
+        </thead>
+        {% for u in users %}
+            <tr>
+                <td><a href="{% url "ms_baseline:users_edit" u.id %}">{{ u.email }}</a></td>
+                <td>{{ u.first_name }}</td>
+                <td>{{ u.last_name }}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="{% url "ms_baseline:users_edit" u.id %}">{% bsiconbox "pencil" 12 "Edit" %}</a>
+                    {% if ms_store is None %}
+                        <a class="btn btn-sm btn-danger ml-1" href="{% url "ms_baseline:users_delete" u.id %}">{% bsiconbox "trash" 12 "Delete" %}</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

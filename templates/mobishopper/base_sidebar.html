@@ -1,0 +1,24 @@
+{% extends "mobishopper/base_skel.html" %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content_top %}
+    <div id="content-row">
+        <div id="sidebar">
+            <div id="sidebar-inner">
+                {% block sidebar %}
+                    {% render_sidebar %}
+                {% endblock %}
+            </div>
+        </div>
+        <div id="content-main">
+            <div id="content-main-inner">
+                {% if not hide_title %}
+                    <h1>{{ title }}{% if add_button_dest %} <a href="{{ add_button_dest }}" class="btn btn-outline-success">{% trans "Add" %}</a>{% endif %}{% block extra_title %}{% endblock %}</h1>
+                {% endif %}
+                {% bootstrap_messages %}
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div></div>
+{% endblock %}

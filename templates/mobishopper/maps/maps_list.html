@@ -1,0 +1,39 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% block content %}
+    {% if not maps %}
+        {% no_results_msg %}
+    {% else %}
+        <table class="table table-hover table-vam">
+            <thead>
+            <tr>
+                <th>{% trans "Valid from" %}</th>
+                <th>{% trans "Valid until" %}</th>
+                <th>{% trans "Width" %}</th>
+                <th>{% trans "Height" %}</th>
+                <th>{% trans "Actions" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for m in maps %}
+                <tr>
+                {% if m.in_effect %}
+                    <td><strong><a href="{{ m.get_absolute_url }}">{{ m.date_started|date:"DATETIME_FORMAT" }}</a></strong></td>
+                {% else %}
+                    <td><a href="{{ m.get_absolute_url }}">{{ m.date_started|date:"DATETIME_FORMAT" }}</a></td>
+                {% endif %}
+                    <td>{% if m.date_ended %}{{ m.date_ended|date:"DATETIME_FORMAT" }}{% else %}{% trans "indefinitely" %}{% endif %}</td>
+                    <td>{{ m.width }}</td>
+                    <td>{{ m.height }}</td>
+                    <td>
+                        <a class="btn btn-outline-primary" href="{% url "ms_maps:maps_show" m.id %}">{% trans "Show" %}</a>
+                        <a class="btn btn-outline-info" href="{% url "ms_maps:maps_edit" m.id %}">{% trans "Edit" %}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    {% paginator maps %}
+{% endblock %}

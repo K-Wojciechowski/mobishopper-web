@@ -1,0 +1,1 @@
+"""MobiShopper base package."""

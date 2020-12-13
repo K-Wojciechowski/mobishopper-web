@@ -1,0 +1,5 @@
+{% load i18n %}
+{% if not date_started and not date_ended %}{% trans "indefinitely" %}{% endif %}
+{% if date_started %}{% blocktrans with date_started=date_started|date:"DATETIME_FORMAT" %}from {{ date_started }}{% endblocktrans %}{% endif %}
+{% if date_started and date_ended %}<br>{% endif %}
+{% if date_ended %}{% blocktrans with date_ended=date_ended|date:"DATETIME_FORMAT" %}until {{ date_ended }}{% endblocktrans %}{% endif %}

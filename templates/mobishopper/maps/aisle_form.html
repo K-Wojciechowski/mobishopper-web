@@ -1,0 +1,12 @@
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+<form action="" method="POST">
+    {% bootstrap_form_errors form type='all' %}
+    {% csrf_token %}
+    {% bootstrap_field form.code layout="horizontal" %}
+    {% bootstrap_field form.name layout="horizontal" %}
+    {% bootstrap_field form.description layout="horizontal" %}
+    {% buttonbox_save %}
+</form>

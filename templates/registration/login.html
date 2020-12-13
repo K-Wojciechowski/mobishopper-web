@@ -1,0 +1,31 @@
+{% extends "mobishopper/base_external.html" %}
+{% load i18n %}
+{% block body %}
+
+    <main role="main" id="content-top" class="external-base">
+        <div class="login-box">
+            <h1 class="mb-3">{% trans "Please log in" %}</h1>
+
+            {% if form.errors %}
+                <p class="mb-3 text-error">{% trans "Incorrect e-mail or password." %}</p>
+            {% endif %}
+
+            {% if next and user.is_authenticated %}
+                <p class="mb-3 text-error">{% trans "You do not have access to this page. Log in as another user or contact your manager." %}</p>
+            {% endif %}
+
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <input class="form-control form-control-lg mb-3" name="{{ form.username.name }}" type="email" placeholder="{% trans "E-mail" %}">
+                <input class="form-control form-control-lg mb-3" name="{{ form.password.name }}" type="password" placeholder="{% trans "Password" %}">
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg mb-1">{% trans "Log in" %}</button>
+                </div>
+                <input type="hidden" name="next" value="{{ next }}">
+            </form>
+
+            <p class="text-center"><a href="{% url 'password_reset' %}">{% trans "Lost password?" %}</a></p>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% load i18n %}
+<div class="form-group row"><label class="col-md-3 col-form-label" for="{{ form_field.id_for_label }}">{{ field_title }}</label><div class="col-md-9"><select id="{{ form_field.id_for_label }}" name="{{ form_field.html_name }}" class="form-control" {% if multiple %}multiple{% endif %} {% if required %}required{% endif %} {% if multiple %}aria-describedby="{{ form_field.id_for_label }}_help"{% endif %}>
+    {% if show_blank %}
+        <option value="">---------</option>
+    {% endif %}
+    {% for group, subcats in subcat_menu %}
+        <optgroup label="{{ group }}">
+            {% for subcat in subcats %}
+                <option value="{{ subcat.id }}" {% if subcat.id in checked_ids %}selected{% endif %}>{{ subcat.name }}</option>
+            {% endfor %}
+        </optgroup>
+    {% endfor %}
+</select>
+{% if multiple %}
+<small id="{{ form_field.id_for_label }}_help" class="form-text text-muted">
+  {% blocktrans %}Press <strong>Ctrl</strong> (or <strong>Command</strong> on a Mac) to select multiple items or to deselect an item.{% endblocktrans %}
+</small>
+{% endif %}
+</div></div>

@@ -1,0 +1,14 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block extra_title %}
+<a href="{% url "ms_products:groups_edit" group.id %}" class="btn btn-outline-info">{% trans "Edit" %}</a>
+<a href="{% url "ms_products:groups_delete" group.id %}" class="btn btn-outline-danger">{% trans "Delete" %}</a>
+{% endblock %}
+{% block content %}
+    {% show_all_chooser show_all %}
+    {% products_table products %}
+    <p class="text-muted">{% trans "To add/remove products to/from a group, use the <em>Group</em> field when editing products." %}</p>
+{% endblock %}

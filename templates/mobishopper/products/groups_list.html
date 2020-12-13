@@ -1,0 +1,48 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="card-box card-box-top">
+        <form class="form-inline" action="" method="GET">
+            {% inline_form_field search_form.name %}
+            {% inline_form_field search_form.vendor %}
+            {% inline_form_field search_form.description %}
+            <a href="{% url 'ms_products:search' %}" class="btn btn-secondary ml-2 mr-2">{% bsiconbox "funnel" 12 "More filters…" %}</a>
+            <button class="btn btn-secondary">{% bsiconbox "search" 12 "Search" %}</button>
+        </form>
+    </div>
+
+    {% if not groups %}
+        {% no_results_msg %}
+    {% else %}
+        {% start_copy_get_if show_order request %}
+    <table class="table table-hover table-vam">
+        <thead>
+        <tr>
+            <th>{% table_ord_helper "Group" "name" True %}</th>
+            <th>{% table_ord_helper "Vendor" "vendor" %}</th>
+            <th>{% trans "Valid products in group" %}</th>
+            <th>{% trans "Actions" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for g in groups %}
+            <tr>
+                <td>{{ g.html_link }}</td>
+                <td>{{ g.vendor.html_link }}</td>
+                <td>{{ g.size }}</td>
+                <td>
+                    <a class="btn btn-outline-primary" href="{% url "ms_products:groups_show" g.id %}">{% trans "Show products" %}</a>
+                    <a class="btn btn-outline-info" href="{% url "ms_products:groups_edit" g.id %}">{% trans "Edit" %}</a>
+                    <a class="btn btn-outline-danger" href="{% url "ms_products:groups_delete" g.id %}">{% trans "Delete" %}</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% close_copy_get_if show_order %}
+    {% endif %}
+{% paginator groups %}
+{% endblock %}

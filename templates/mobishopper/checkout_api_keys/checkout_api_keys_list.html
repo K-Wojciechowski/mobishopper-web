@@ -1,0 +1,26 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    <table class="table table-hover table-vam">
+        <thead>
+        <tr>
+            <th>{% trans "Name" %}</th>
+            <th>{% trans "Store" %}</th>
+            <th>{% trans "Actions" %}</th>
+        </tr>
+        </thead>
+        {% for k in keys %}
+            <tr>
+                <td>{{ k.html_link }}</td>
+                <td>{{ k.store.html_link }}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="{% url "ms_baseline:checkout_api_keys_edit" k.id %}">{% bsiconbox "pencil" 12 "Edit" %}</a>
+                    <a class="btn btn-sm btn-danger" href="{% url "ms_baseline:checkout_api_keys_delete" k.id %}">{% bsiconbox "trash" 12 "Delete" %}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% paginator keys %}
+{% endblock %}

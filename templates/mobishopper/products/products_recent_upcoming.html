@@ -1,0 +1,17 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% block content %}
+    {% if products_upcoming %}
+        <h1>{% if ms_store %}{% trans "Upcoming changes in store" %}{% else %}{% trans "Upcoming changes" %}{% endif %}</h1>
+        {% products_table products_upcoming %}
+    {% endif %}
+    {% if products_recent %}
+        <h1>{% if ms_store %}{% trans "Recent changes in store" %}{% else %}{% trans "Recent changes" %}{% endif %}</h1>
+        {% products_table products_recent %}
+    {% endif %}
+    {% if not products_upcoming and not products_recent %}
+        {% no_results_msg %}
+    {% endif %}
+{% endblock %}

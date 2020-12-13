@@ -1,0 +1,35 @@
+{% extends "mobishopper/base_fullwidth.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msu_extras %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-3">
+            <strong>{% trans "Shopping lists (last 24 hours)" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ shopping_lists_24h }}</strong>
+        </div>
+        <div class="col-md-3">
+            <strong>{% trans "Shopping lists (last 7 days)" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ shopping_lists_7d }}</strong>
+        </div>
+
+        <div class="col-md-3">
+            <strong>{% trans "Coupons used (last 24 hours)" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ coupons_24h }}</strong>
+        </div>
+        <div class="col-md-3">
+            <strong>{% trans "Coupons used (last 7 days)" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ coupons_7d }}</strong>
+        </div>
+    </div>
+    <h2>{% trans "Popular products" %}</h2>
+    {% popular_products_table products_list %}
+    <p class="text-right">
+        <a href="{% url "ms_userdata:popular_products" %}" class="btn btn-primary mt-1 mb-1 text-right">{% trans "Show all popular products" %}</a>
+    </p>
+    <h2>{% trans "Popular coupons" %}</h2>
+    {% popular_coupons_table coupons_list %}
+    <p class="text-right">
+        <a href="{% url "ms_userdata:popular_coupons" %}" class="btn btn-primary mt-1 mb-1 text-right">{% trans "Show all popular coupons" %}</a>
+    </p>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+    <form action="" method="POST">
+        {% bootstrap_form_errors form type='all' %}
+        {% csrf_token %}
+        {% bootstrap_field form.name layout="horizontal" %}
+        {% bootstrap_field form.expected_units layout="horizontal" %}
+        <div id="expected_units_custom_text_row">
+        {% bootstrap_field form.expected_units_custom_text layout="horizontal" %}
+        </div>
+
+        {% subcat_menu_field form multiple=True required=False field_name="subcategories_required" field_title="_form" %}
+        {% subcat_menu_field form multiple=True required=False field_name="subcategories_recommended" field_title="_form" %}
+
+        {% buttonbox_save %}
+    </form>
+{% endblock %}
+{% block js_config %}
+<script>
+(function() {
+    var CUSTOM_TEXT_ID = "expected_units_custom_text_row";
+    registerActivatorRadio("expected_units", "_custom_set", CUSTOM_TEXT_ID, "show");
+    var _hide_activators = [];
+    document.querySelectorAll("[name=expected_units]").forEach(function (el) {
+        if (el.value !== "_custom_set") {
+            _hide_activators.push(el);
+        }
+    });
+    registerActivator(_hide_activators, CUSTOM_TEXT_ID, "hide");
+    if (!document.querySelector("[name=expected_units][value=_custom_set]").checked) {
+        document.getElementById(CUSTOM_TEXT_ID).classList.add("d-none");
+    }
+})();
+</script>
+{% endblock %}

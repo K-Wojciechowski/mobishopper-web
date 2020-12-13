@@ -1,0 +1,2440 @@
+# MobiShopper Web
+# Copyright (C) 2020, Krzysztof Wojciechowski
+# This file is distributed under the same license as the MobiShopper package.
+# Krzysztof Wojciechowski <kw@krzysztofwojciechowski.pl>, 2020
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-06 19:18+0100\n"
+"PO-Revision-Date: 2020-12-06 19:18+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: mobishopper/special_translations.py:2
+msgid "Auto-assign"
+msgstr "Przypisz automatycznie"
+
+#: mobishopper/special_translations.py:3
+#: templates/registration/password_change_form.html:25
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: mobishopper/special_translations.py:4
+msgid "Change your password"
+msgstr "Zmień hasło"
+
+#: mobishopper/special_translations.py:5
+#: templates/mobishopper/maps/aisles_list.html:35
+#: templates/mobishopper/maps/aisles_list.html:46
+#: templates/mobishopper/products/global_subaisles_list.html:26
+#: templates/mobishopper/products/groups_list.html:39
+#: templates/mobishopper/products/groups_show.html:8
+#: templates/mobishopper/products/properties_list.html:29
+msgid "Delete"
+msgstr "Usuń"
+
+#: mobishopper/special_translations.py:6
+#: templates/mobishopper/deals/deals_table.html:38
+#: templates/mobishopper/maps/aisles_list.html:34
+#: templates/mobishopper/maps/aisles_list.html:45
+#: templates/mobishopper/maps/maps_list.html:31
+#: templates/mobishopper/products/categories_list.html:32
+#: templates/mobishopper/products/categories_list.html:42
+#: templates/mobishopper/products/global_subaisles_list.html:25
+#: templates/mobishopper/products/groups_list.html:38
+#: templates/mobishopper/products/groups_show.html:7
+#: templates/mobishopper/products/products_show_edit.html:27
+#: templates/mobishopper/products/products_table.html:27
+#: templates/mobishopper/products/properties_list.html:28
+#: templates/mobishopper/products/vendors_list.html:43
+#: templates/mobishopper/products/vendors_show.html:7
+msgid "Edit"
+msgstr "Edytuj"
+
+#: mobishopper/special_translations.py:7 ms_baseline/constants.py:17
+msgid "Employees"
+msgstr "Pracownicy"
+
+#: mobishopper/special_translations.py:8
+#: ms_products/views/product_management.py:227
+#: ms_products/views/product_management.py:273
+#: templates/mobishopper/products/products_show_edit.html:65
+msgid "Group"
+msgstr "Grupa"
+
+#: mobishopper/special_translations.py:9
+msgid "More filters…"
+msgstr "Więcej filtrów…"
+
+#: mobishopper/special_translations.py:10 ms_baseline/forms.py:115
+#: ms_deals/forms.py:22 ms_products/forms.py:35 ms_products/forms.py:65
+#: templates/mobishopper/checkout_api_keys/checkout_api_keys_list.html:9
+#: templates/mobishopper/deals/deals_show_edit.html:7
+#: templates/mobishopper/products/product_history_data.html:6
+#: templates/mobishopper/stores/stores_list.html:18
+#: templates/mobishopper/userdata/popular_coupons_table.html:9
+msgid "Name"
+msgstr "Nazwa"
+
+#: mobishopper/special_translations.py:11 ms_deals/views/__init__.py:164
+#: ms_deals/views/__init__.py:180
+#: templates/mobishopper/deals/deals_show_edit.html:22
+#: templates/mobishopper/products/product_history_data.html:8
+#: templates/mobishopper/products/products_local_overrides.html:17
+#: templates/mobishopper/products/products_show_edit.html:72
+#: templates/mobishopper/products/products_show_edit.html:113
+#: templates/mobishopper/userdata/popular_products_table.html:11
+msgid "Price"
+msgstr "Cena"
+
+#: mobishopper/special_translations.py:12 ms_deals/views/__init__.py:160
+#: ms_deals/views/__init__.py:180
+#: templates/mobishopper/deals/deals_show_edit.html:20
+#: templates/mobishopper/products/products_local_overrides.html:15
+#: templates/mobishopper/userdata/popular_coupons_table.html:10
+#: templates/mobishopper/userdata/popular_products_table.html:9
+msgid "Product"
+msgstr "Produkt"
+
+#: mobishopper/special_translations.py:13
+#: templates/registration/password_reset_confirm.html:23
+msgid "Reset password"
+msgstr "Resetuj hasło"
+
+#: mobishopper/special_translations.py:14
+msgid "Save"
+msgstr "Zapisz"
+
+#: mobishopper/special_translations.py:15
+#: ms_products/views/product_management.py:318
+msgid "Search"
+msgstr "Szukaj"
+
+#: mobishopper/special_translations.py:16
+#: templates/mobishopper/products/products_local_overrides.html:18
+#: templates/mobishopper/userdata/popular_coupons_table.html:12
+msgid "Validity"
+msgstr "Daty obowiązywania"
+
+#: mobishopper/special_translations.py:17 ms_deals/views/__init__.py:164
+#: ms_products/forms.py:36 ms_products/views/product_management.py:217
+#: ms_products/views/product_management.py:264
+#: ms_products/views/product_organization.py:218
+#: ms_products/views/product_organization.py:271
+#: templates/mobishopper/products/products_show_edit.html:61
+#: templates/mobishopper/userdata/popular_products_table.html:10
+msgid "Vendor"
+msgstr "Producent"
+
+#: mobishopper/special_translations.py:18
+msgid "View employees of store"
+msgstr "Pokaż pracowników sklepu"
+
+#: mobishopper/special_translations.py:19
+msgid "Yes"
+msgstr "Tak"
+
+#: ms_baseline/constants.py:6 ms_baseline/forms.py:67
+msgid "Can manage products"
+msgstr "Może zarządzać produktami"
+
+#: ms_baseline/constants.py:7 ms_baseline/forms.py:68
+msgid "Can manage maps"
+msgstr "Może zarządzać mapami"
+
+#: ms_baseline/constants.py:8 ms_baseline/forms.py:69
+msgid "Can manage deals"
+msgstr "Może zarządzać promocjami"
+
+#: ms_baseline/constants.py:9 ms_baseline/forms.py:70
+msgid "Can manage employees"
+msgstr "Może zarządzać pracownikami"
+
+#: ms_baseline/constants.py:10 ms_baseline/forms.py:71
+msgid "Can view statistics"
+msgstr "Może wyświetlać statystyki"
+
+#: ms_baseline/constants.py:14 ms_products/views/product_management.py:304
+#: templates/mobishopper/home.html:6
+msgid "Products"
+msgstr "Produkty"
+
+#: ms_baseline/constants.py:15
+msgid "Maps"
+msgstr "Mapy"
+
+#: ms_baseline/constants.py:16 ms_deals/views/__init__.py:233
+#: templates/mobishopper/products/products_show_edit.html:32
+#: templates/mobishopper/products/products_show_edit.html:158
+msgid "Deals"
+msgstr "Promocje"
+
+#: ms_baseline/constants.py:18 ms_userdata/views/__init__.py:81
+msgid "Statistics"
+msgstr "Statystyki"
+
+#: ms_baseline/constants.py:22 ms_baseline/forms.py:83
+#: templates/mobishopper/my_permissions.html:33
+msgid "Can manage global products"
+msgstr "Może zarządzać globalnymi produktami"
+
+#: ms_baseline/constants.py:23 ms_baseline/forms.py:84
+#: templates/mobishopper/my_permissions.html:34
+msgid "Can manage global deals"
+msgstr "Może zarządzać globalnymi promocjami"
+
+#: ms_baseline/constants.py:24 ms_baseline/forms.py:85
+#: templates/mobishopper/my_permissions.html:35
+msgid "Can view global statistics"
+msgstr "Może wyświetlać globalne statystyki"
+
+#: ms_baseline/constants.py:25 ms_baseline/forms.py:86
+#: templates/mobishopper/my_permissions.html:36
+msgid "Can manage users"
+msgstr "Może zarządzać użytkownikami"
+
+#: ms_baseline/constants.py:26 ms_baseline/forms.py:87
+#: templates/mobishopper/my_permissions.html:37
+msgid "Can manage stores"
+msgstr "Może zarządzać sklepami"
+
+#: ms_baseline/constants.py:30
+msgid "Is manager"
+msgstr "Jest managerem"
+
+#: ms_baseline/constants.py:31
+msgid "Is global manager"
+msgstr "Jest globalnym managerem"
+
+#: ms_baseline/constants.py:32
+msgid "Is system administrator"
+msgstr "Jest administratorem systemu"
+
+#: ms_baseline/constants.py:36
+msgid "Only visible stores"
+msgstr "Tylko widoczne sklepy"
+
+#: ms_baseline/constants.py:37
+msgid "Only hidden stores"
+msgstr "Tylko ukryte sklepy"
+
+#: ms_baseline/constants.py:38
+msgid "Show all stores"
+msgstr "Pokaż wszystkie sklepy"
+
+#: ms_baseline/form_utils.py:17
+msgid "Enter a list of values."
+msgstr "Wprowadź listę wartości."
+
+#: ms_baseline/form_utils.py:41 ms_baseline/form_utils.py:59
+#: ms_baseline/models.py:53 ms_baseline/views/user_edit_helpers.py:44
+#: ms_baseline/views/user_edit_helpers.py:74 ms_maps/views/api_views.py:93
+#: ms_maps/views/api_views.py:496
+msgid "Changes saved."
+msgstr "Zapisano zmiany."
+
+#: ms_baseline/form_utils.py:43 ms_baseline/form_utils.py:61
+#: ms_baseline/models.py:37
+#, python-brace-format
+msgid "Failed to save changes: {0}"
+msgstr "Nie udało się zapisać zmian: {0}"
+
+#: ms_baseline/form_utils.py:45 ms_baseline/form_utils.py:63
+#: ms_baseline/models.py:41
+msgid "Failed to save changes."
+msgstr "Nie udało się zapisać zmian."
+
+#: ms_baseline/forms.py:13 ms_baseline/forms.py:31 ms_baseline/forms.py:56
+#: ms_baseline/forms.py:63 ms_baseline/forms.py:77
+#: templates/mobishopper/stores/stores_users.html:12
+#: templates/mobishopper/users/users_list.html:24
+#: templates/registration/login.html:19
+#: templates/registration/password_reset_form.html:15
+msgid "E-mail"
+msgstr "E-mail"
+
+#: ms_baseline/forms.py:17 ms_baseline/forms.py:35
+msgid "Action"
+msgstr "Akcja"
+
+#: ms_baseline/forms.py:18
+msgid "Remove permissions"
+msgstr "Usuń uprawnienia"
+
+#: ms_baseline/forms.py:18 ms_baseline/forms.py:38
+msgid "Mark as local manager"
+msgstr "Oznacz jako lokalny manager"
+
+#: ms_baseline/forms.py:22
+#: templates/mobishopper/users/users_edit_global.html:31
+msgid "Local permissions"
+msgstr "Uprawnienia lokalne"
+
+#: ms_baseline/forms.py:37
+msgid "Remove all permissions"
+msgstr "Usuń wszystkie uprawnienia"
+
+#: ms_baseline/forms.py:39
+msgid "Mark as global manager"
+msgstr "Oznacz jako globalny manager"
+
+#: ms_baseline/forms.py:40
+msgid "Mark as full manager"
+msgstr "Oznacz jako pełny manager"
+
+#: ms_baseline/forms.py:45
+#: templates/mobishopper/users/users_edit_global.html:38
+msgid "Global permissions"
+msgstr "Uprawnienia globalne"
+
+#: ms_baseline/forms.py:54 ms_baseline/forms.py:64 ms_baseline/forms.py:78
+#: templates/mobishopper/stores/stores_users.html:13
+#: templates/mobishopper/users/users_list.html:25
+msgid "First name"
+msgstr "Imię"
+
+#: ms_baseline/forms.py:55 ms_baseline/forms.py:65 ms_baseline/forms.py:79
+#: templates/mobishopper/stores/stores_users.html:14
+#: templates/mobishopper/users/users_list.html:26
+msgid "Last name"
+msgstr "Nazwisko"
+
+#: ms_baseline/forms.py:57
+msgid "Show managers only"
+msgstr "Pokaż tylko managerów"
+
+#: ms_baseline/forms.py:66
+msgid "Manages this store"
+msgstr "Zarządza tym sklepem"
+
+#: ms_baseline/forms.py:80
+msgid "Local manager"
+msgstr "Lokalny manager"
+
+#: ms_baseline/forms.py:81 templates/mobishopper/my_permissions.html:31
+msgid "Global manager"
+msgstr "Globalny manager"
+
+#: ms_baseline/forms.py:82
+msgid "System administrator"
+msgstr "Administrator systemu"
+
+#: ms_baseline/forms.py:94 templates/registration/password_change_form.html:19
+#: templates/registration/password_reset_confirm.html:18
+msgid "New password"
+msgstr "Nowe hasło"
+
+#: ms_baseline/forms.py:95 ms_baseline/forms.py:102 ms_baseline/forms.py:109
+#: templates/registration/password_change_form.html:21
+#: templates/registration/password_reset_confirm.html:20
+msgid "Repeat password"
+msgstr "Powtórz hasło"
+
+#: ms_baseline/forms.py:101 ms_baseline/forms.py:108
+#: templates/registration/login.html:20
+msgid "Password"
+msgstr "Hasło"
+
+#: ms_baseline/forms.py:116 templates/mobishopper/stores/stores_list.html:19
+msgid "City"
+msgstr "Miasto"
+
+#: ms_baseline/forms.py:118
+msgid "Visibility"
+msgstr "Widoczność"
+
+#: ms_baseline/models.py:67
+msgid "date added"
+msgstr "data dodania"
+
+#: ms_baseline/models.py:68
+msgid "date modified"
+msgstr "data modyfikacji"
+
+#: ms_baseline/models.py:77
+msgid "valid from"
+msgstr "obowiązuje od"
+
+#: ms_baseline/models.py:78
+msgid "valid until"
+msgstr "obowiązuje do"
+
+#: ms_baseline/models.py:93
+msgid "The validity end date is earlier than the start date."
+msgstr ""
+"Data końca obowiązywania jest późniejsza niż data początku obowiązywania."
+
+#: ms_baseline/models.py:125
+msgid "There was an issue saving changes to this object’s replacement."
+msgstr "Wystąpił problem z zapisaniem zmian w nowej wersji obiektu."
+
+#: ms_baseline/models.py:142 ms_baseline/models.py:176
+msgid "There was an issue migrating objects with revisions."
+msgstr ""
+"Wystąpił problem z wprowadzaniem zmian do obiektów zależnych z historią "
+"rewizji."
+
+#: ms_baseline/models.py:188 ms_baseline/models.py:295 ms_deals/models.py:20
+#: ms_deals/models.py:57 ms_deals/models.py:106 ms_maps/models.py:32
+#: ms_maps/models.py:61 ms_products/models.py:23 ms_products/models.py:39
+#: ms_products/models.py:60 ms_products/models.py:76 ms_products/models.py:109
+#: ms_products/models.py:139 ms_products/models.py:180
+msgid "name"
+msgstr "nazwa"
+
+#: ms_baseline/models.py:189
+msgid "address"
+msgstr "adres"
+
+#: ms_baseline/models.py:190
+msgid "city"
+msgstr "miasto"
+
+#: ms_baseline/models.py:191
+msgid "region code"
+msgstr "kod regionu"
+
+#: ms_baseline/models.py:192
+msgid "hidden"
+msgstr "ukryte"
+
+#: ms_baseline/models.py:241
+msgid "first name"
+msgstr "imię"
+
+#: ms_baseline/models.py:242
+msgid "last name"
+msgstr "nazwisko"
+
+#: ms_baseline/models.py:245
+msgid "is manager"
+msgstr "jest managerem"
+
+#: ms_baseline/models.py:246
+msgid "is global manager"
+msgstr "jest globalnym managerem"
+
+#: ms_baseline/models.py:247
+msgid "can manage global products"
+msgstr "może zarządzać globalnymi produktami"
+
+#: ms_baseline/models.py:248
+msgid "can manage global deals"
+msgstr "może zarządzać globalnymi promocjami"
+
+#: ms_baseline/models.py:249
+msgid "can view global statistics"
+msgstr "może wyświetlać globalne statystyki"
+
+#: ms_baseline/models.py:250
+msgid "can manage users"
+msgstr "może zarządzać użytkownikami"
+
+#: ms_baseline/models.py:251
+msgid "can manage stores"
+msgstr "może zarządzać sklepami"
+
+#: ms_baseline/models.py:283 ms_baseline/models.py:299 ms_deals/models.py:26
+#: ms_deals/models.py:65 ms_maps/models.py:38 ms_maps/models.py:72
+#: ms_maps/models.py:118 ms_maps/models.py:157 ms_products/models.py:85
+#: ms_products/models.py:119 ms_products/models.py:201
+#: ms_products/models.py:279
+msgid "user"
+msgstr "użytkownik"
+
+#: ms_baseline/models.py:284 ms_baseline/models.py:296 ms_maps/models.py:36
+#: ms_maps/models.py:70 ms_maps/models.py:111 ms_maps/models.py:152
+#: ms_products/models.py:83 ms_products/models.py:113 ms_products/models.py:189
+#: ms_products/models.py:274
+msgid "store"
+msgstr "sklep"
+
+#: ms_baseline/models.py:285
+msgid "can manage products"
+msgstr "może zarządzać produktami"
+
+#: ms_baseline/models.py:286
+msgid "can manage maps"
+msgstr "może zarządzać mapami"
+
+#: ms_baseline/models.py:287
+msgid "can manage deals"
+msgstr "może zarządzać promocjami"
+
+#: ms_baseline/models.py:288
+msgid "can manage employees"
+msgstr "może zarządzać pracownikami"
+
+#: ms_baseline/models.py:289
+msgid "can view statistics"
+msgstr "może wyświetlać statystyki"
+
+#: ms_baseline/models.py:298
+msgid "is active"
+msgstr "aktywne"
+
+#: ms_baseline/permission_helpers.py:18
+msgid "Permission denied"
+msgstr "Brak dostępu"
+
+#: ms_baseline/permission_helpers.py:36 ms_baseline/permission_helpers.py:106
+#: templates/mobishopper/deny_unauthorized.html:6
+msgid "Forbidden"
+msgstr "Brak dostępu"
+
+#: ms_baseline/templatetags/ms_extras.py:166
+msgid "No results found."
+msgstr "Nie znaleziono wyników."
+
+#: ms_baseline/templatetags/ms_extras.py:172 ms_deals/views/api_views.py:34
+#: ms_products/constants.py:24
+#: templates/mobishopper/products/products_show_edit.html:112
+msgid "yes"
+msgstr "tak"
+
+#: ms_baseline/templatetags/ms_extras.py:172 ms_deals/views/api_views.py:34
+#: ms_products/constants.py:24
+#: templates/mobishopper/products/products_show_edit.html:112
+msgid "no"
+msgstr "nie"
+
+#: ms_baseline/utils.py:144
+msgid "No access to stores"
+msgstr "Brak dostępu do sklepów"
+
+#: ms_baseline/utils.py:157
+msgid "Insufficient permissions"
+msgstr "Niewystarczające uprawnienia"
+
+#: ms_baseline/utils.py:260
+msgid "Delete {}"
+msgstr "Usuń {}"
+
+#: ms_baseline/utils.py:269 ms_products/views/product_organization.py:313
+msgid "{} has been deleted."
+msgstr "Usunięto {}."
+
+#: ms_baseline/views/__init__.py:72
+msgid "Home"
+msgstr "Strona główna"
+
+#: ms_baseline/views/__init__.py:96
+msgid "My permissions"
+msgstr "Moje uprawnienia"
+
+#: ms_baseline/views/api_views.py:34
+msgid "Your store has been changed!"
+msgstr "Twój sklep został zmieniony!"
+
+#: ms_baseline/views/api_views.py:37
+msgid "Failed to set store!"
+msgstr "Nie udało się ustawić sklepu!"
+
+#: ms_baseline/views/api_views.py:57 ms_baseline/views/api_views.py:89
+#: ms_baseline/views/user_management.py:106
+#: ms_baseline/views/user_management.py:183
+msgid "Passwords do not match."
+msgstr "Hasła nie zgadzają się."
+
+#: ms_baseline/views/api_views.py:64
+msgid "Registration was successful!"
+msgstr "Rejestracja się powiodła!"
+
+#: ms_baseline/views/api_views.py:68
+msgid "An account with this e-mail address already exists."
+msgstr "Konto z tym adresem e-mail już istnieje."
+
+#: ms_baseline/views/api_views.py:73
+msgid "Failed to create an account."
+msgstr "Nie udało się utworzyć konta."
+
+#: ms_baseline/views/api_views.py:94
+msgid "Your data has been changed!"
+msgstr "Twoje dane zostały zmienione!"
+
+#: ms_baseline/views/store_management.py:46
+#: templates/mobishopper/deals/deals_show_edit.html:30
+#: templates/mobishopper/home.html:15
+#: templates/mobishopper/my_permissions.html:5
+msgid "Stores"
+msgstr "Sklepy"
+
+#: ms_baseline/views/store_management.py:62
+msgid "Add store"
+msgstr "Dodaj sklep"
+
+#: ms_baseline/views/store_management.py:80
+#: ms_baseline/views/store_management.py:163
+msgid "Edit store {}"
+msgstr "Edytuj sklep {}"
+
+#: ms_baseline/views/store_management.py:94
+msgid "Employees of store {}"
+msgstr "Pracownicy sklepu {}"
+
+#: ms_baseline/views/store_management.py:121
+msgid "Checkout API keys"
+msgstr "Klucze API kas"
+
+#: ms_baseline/views/store_management.py:140
+msgid "Add checkout API key"
+msgstr "Dodaj klucz API kasy"
+
+#: ms_baseline/views/user_edit_helpers.py:31
+msgid "You cannot remove yourself from a store."
+msgstr "Nie możesz usunąć siebie ze sklepu."
+
+#: ms_baseline/views/user_edit_helpers.py:40
+msgid ""
+"You cannot remove the permission to manage employees from your own account."
+msgstr ""
+"Nie możesz usunąć uprawnienia do zarządzania pracownikami ze swojego konta."
+
+#: ms_baseline/views/user_edit_helpers.py:59
+#: ms_baseline/views/user_edit_helpers.py:96
+#, python-brace-format
+msgid "Edit user {0}"
+msgstr "Edytuj użytkownika {0}"
+
+#: ms_baseline/views/user_management.py:53 templates/mobishopper/home.html:11
+msgid "Users"
+msgstr "Użytkownicy"
+
+#: ms_baseline/views/user_management.py:80
+msgid "Add new user"
+msgstr "Dodaj nowego użytkownika"
+
+#: ms_baseline/views/user_management.py:110
+msgid "Password has been reset."
+msgstr "Hasło zostało zresetowane."
+
+#: ms_baseline/views/user_management.py:117
+#, python-brace-format
+msgid "Reset password for {0}"
+msgstr "Zresetuj hasło użytkownika {0}"
+
+#: ms_baseline/views/user_management.py:149
+msgid "User does not exist."
+msgstr "Użytkownik nie istnieje."
+
+#: ms_baseline/views/user_management.py:157
+msgid "Edit profile"
+msgstr "Edytuj profil"
+
+#: ms_baseline/views/user_management.py:164
+msgid "Change user type and permissions"
+msgstr "Zmień typ użytkownika i uprawnienia"
+
+#: ms_baseline/views/user_management.py:177
+msgid ""
+"You can only add local manager accounts. Customers can register in the app."
+msgstr ""
+"Możesz dodawać tylko konta lokalnych managerów. Klienci mogą rejestrować się "
+"w aplikacji."
+
+#: ms_baseline/views/user_management.py:196
+msgid "User has been added."
+msgstr "Użytkownik został dodany."
+
+#: ms_baseline/views/user_permission_helpers.py:29
+msgid "Cannot change your own permissions with this panel."
+msgstr "Nie można zmienić swoich własnych uprawnień w tym miejscu."
+
+#: ms_baseline/views/user_permission_helpers.py:38
+#: ms_baseline/views/user_permission_helpers.py:70
+msgid "All permissions removed."
+msgstr "Wszystkie uprawnienia usunięto."
+
+#: ms_baseline/views/user_permission_helpers.py:45
+#: ms_baseline/views/user_permission_helpers.py:88
+msgid "Permission level set to local manager."
+msgstr "Ustawiono poziom uprawnień na managera lokalnego."
+
+#: ms_baseline/views/user_permission_helpers.py:53
+msgid "Permission level set to global manager."
+msgstr "Ustawiono poziom uprawnień na managera globalnego."
+
+#: ms_baseline/views/user_permission_helpers.py:60
+msgid "Permission level set to full manager."
+msgstr "Ustawiono poziom uprawnień na pełnego managera."
+
+#: ms_baseline/views/user_permission_helpers.py:66
+msgid "Cannot remove your own permissions."
+msgstr "Nie można usunąć swoich własnych uprawnień."
+
+#: ms_baseline/views/user_permission_helpers.py:74
+msgid ""
+"Local permissions removed, user is still a manager of a different store."
+msgstr ""
+"Usunięto uprawnienia lokalne, użytkownik jest wciąż managerem w innym "
+"sklepie."
+
+#: ms_deals/forms.py:23
+msgid "Product name"
+msgstr "Nazwa produktu"
+
+#: ms_deals/forms.py:25 ms_products/forms.py:40 ms_products/forms.py:67
+msgid "Valid at"
+msgstr "Obowiązuje w terminie"
+
+#: ms_deals/forms.py:27 ms_products/forms.py:42 ms_products/forms.py:69
+#: templates/mobishopper/products/vendors_list.html:30
+msgid "Is store-specific"
+msgstr "Jest lokalny w sklepie"
+
+#: ms_deals/forms.py:33 ms_deals/forms.py:46 ms_maps/forms.py:49
+#: ms_products/forms.py:75 ms_products/forms.py:86 ms_products/forms.py:124
+#: ms_products/forms.py:131 ms_products/forms.py:154 ms_products/forms.py:160
+#: ms_products/forms.py:219 ms_products/forms.py:226
+#: templates/mobishopper/deals/deals_show_edit.html:58
+#: templates/mobishopper/maps/maps_list.html:11
+#: templates/mobishopper/products/product_history_data.html:12
+#: templates/mobishopper/products/products_show_edit.html:87
+#: templates/mobishopper/products/products_show_edit.html:117
+msgid "Valid from"
+msgstr "Obowiązuje od"
+
+#: ms_deals/forms.py:34 ms_deals/forms.py:47 ms_products/forms.py:76
+#: ms_products/forms.py:87 ms_products/forms.py:125 ms_products/forms.py:132
+#: ms_products/forms.py:220 ms_products/forms.py:227
+#: templates/mobishopper/deals/deals_show_edit.html:61
+#: templates/mobishopper/maps/maps_list.html:12
+#: templates/mobishopper/products/product_history_data.html:14
+#: templates/mobishopper/products/products_show_edit.html:90
+#: templates/mobishopper/products/products_show_edit.html:119
+msgid "Valid until"
+msgstr "Obowiązuje do"
+
+#: ms_deals/forms.py:40
+msgid "Deal name"
+msgstr "Nazwa promocji"
+
+#: ms_deals/forms.py:58 ms_deals/forms.py:81
+msgid ""
+"You can also find the product with product search, and use the Deals tab on "
+"the product page."
+msgstr ""
+"Możesz też znaleźć produkt za pomocą wyszukiwarki produktów, a następnie "
+"skorzystać z karty Promocje na stronie produktu."
+
+#: ms_deals/models.py:21 ms_deals/models.py:58 ms_maps/models.py:151
+#: ms_products/models.py:273
+msgid "product"
+msgstr "produkt"
+
+#: ms_deals/models.py:22 ms_deals/models.py:59 ms_deals/models.py:110
+msgid "is global"
+msgstr "jest globalny"
+
+#: ms_deals/models.py:23 ms_deals/models.py:60 ms_deals/models.py:111
+msgid "stores"
+msgstr "sklepy"
+
+#: ms_deals/models.py:24 ms_deals/models.py:61 ms_products/models.py:185
+#: ms_products/models.py:276
+msgid "price"
+msgstr "cena"
+
+#: ms_deals/models.py:33 ms_deals/models.py:72 ms_products/models.py:208
+#: ms_products/models.py:286
+msgid "The price must be greater than 0."
+msgstr "Cena musi być większa od zera."
+
+#: ms_deals/models.py:56 ms_deals/models.py:105
+msgid "coupon code"
+msgstr "kod kuponu"
+
+#: ms_deals/models.py:62 ms_deals/models.py:107
+msgid "is one use only"
+msgstr "jednorazowego użytku"
+
+#: ms_deals/models.py:63 ms_deals/models.py:108
+msgid "require log in"
+msgstr "wymaga logowania"
+
+#: ms_deals/models.py:109
+msgid "coupons"
+msgstr "kupony"
+
+#: ms_deals/views/__init__.py:53
+msgid "Deals overview"
+msgstr "Przegląd promocji"
+
+#: ms_deals/views/__init__.py:159
+msgid "Choose a product"
+msgstr "Wybierz produkt"
+
+#: ms_deals/views/__init__.py:175
+msgid "Choose coupons"
+msgstr "Wybierz kupony"
+
+#: ms_deals/views/__init__.py:176
+msgid "Coupon"
+msgstr "Kupon"
+
+#: ms_deals/views/__init__.py:180
+#: templates/mobishopper/deals/deals_show_edit.html:26
+#: templates/mobishopper/deals/deals_table.html:16
+#: templates/mobishopper/userdata/popular_coupons_table.html:11
+msgid "Is global"
+msgstr "Jest globalny"
+
+#: ms_deals/views/__init__.py:245
+#: templates/mobishopper/deals/deals_show_edit.html:11
+#: templates/mobishopper/products/products_show_edit.html:160
+msgid "Coupons"
+msgstr "Kupony"
+
+#: ms_deals/views/__init__.py:251
+msgid "Coupon sets"
+msgstr "Zestawy kuponów"
+
+#: ms_deals/views/__init__.py:257
+#: templates/mobishopper/products/products_show_edit.html:158
+msgid "Add deal"
+msgstr "Dodaj promocję"
+
+#: ms_deals/views/__init__.py:263
+#: templates/mobishopper/products/products_show_edit.html:160
+msgid "Add coupon"
+msgstr "Dodaj kupon"
+
+#: ms_deals/views/__init__.py:269
+msgid "Add coupon set"
+msgstr "Dodaj zestaw kuponów"
+
+#: ms_deals/views/__init__.py:276
+#, python-brace-format
+msgid "Deal {0}"
+msgstr "Promocja {0}"
+
+#: ms_deals/views/__init__.py:283
+#, python-brace-format
+msgid "Coupon {0}"
+msgstr "Kupon {0}"
+
+#: ms_deals/views/__init__.py:290
+#, python-brace-format
+msgid "Coupon set {0}"
+msgstr "Zestaw kuponów {0}"
+
+#: ms_maps/auto_assign.py:89
+msgid "Starting assigning automated locations."
+msgstr "Rozpoczęto automatyczne przypisywanie lokalizacji."
+
+#: ms_maps/auto_assign.py:92
+#, python-brace-format
+msgid "Assigning locations in {store}"
+msgstr "Przypisywanie lokalizacji w sklepie {store}"
+
+#: ms_maps/auto_assign.py:96
+msgid "Automated assignments complete. Assigned {} location."
+msgid_plural "Automated assignments complete. Assigned {} locations."
+msgstr[0] "Zakończono automatyczne przypisywanie. Przypisano {} lokalizację."
+msgstr[1] "Zakończono automatyczne przypisywanie. Przypisano {} lokalizacje."
+msgstr[2] "Zakończono automatyczne przypisywanie. Przypisano {} lokalizacji."
+msgstr[3] "Zakończono automatyczne przypisywanie. Przypisano {} lokalizacji."
+
+#: ms_maps/auto_assign.py:113
+#, python-brace-format
+msgid "==> Assigned {loc.subaisle} to {loc.product}"
+msgstr "==> Przypisano {loc.product} do alejki {loc.subaisle}"
+
+#: ms_maps/auto_assign.py:119
+#, python-brace-format
+msgid ""
+"==> Unable to assign location to {product}: no aisle for {product."
+"subcategory}"
+msgstr ""
+"==> Nie udało się przypisać lokalizacji {product}: nie ma alejki dla "
+"{product.subcategory}"
+
+#: ms_maps/auto_assign.py:125
+#, python-brace-format
+msgid ""
+"==> Failed to assign location to {product}, but candidate subaisle exists."
+msgstr ""
+"==> Nie udało się przypisać lokalizacji {product}, ale istnieje pasująca "
+"alejka."
+
+#: ms_maps/auto_assign.py:131
+#, python-brace-format
+msgid ""
+"==> Unable to assign location to {product}: multiple aisles for {product."
+"subcategory}"
+msgstr ""
+"==> Nie udało się przypisać lokalizacji {product}: istnieje wiele pasujących "
+"alejek dla {product.subcategory}"
+
+#: ms_maps/management/commands/assignlocations.py:25
+msgid "Store {} does not exist!"
+msgstr "Sklep {} nie istnieje!"
+
+#: ms_maps/models.py:33 ms_maps/models.py:62
+msgid "code"
+msgstr "kod"
+
+#: ms_maps/models.py:34 ms_maps/models.py:63 ms_products/models.py:24
+#: ms_products/models.py:40 ms_products/models.py:61 ms_products/models.py:78
+#: ms_products/models.py:110 ms_products/models.py:181
+msgid "description"
+msgstr "opis"
+
+#: ms_maps/models.py:35 ms_maps/models.py:64 ms_products/models.py:25
+#: ms_products/models.py:41
+msgid "visible"
+msgstr "widoczny"
+
+#: ms_maps/models.py:65 ms_products/models.py:42
+msgid "parent"
+msgstr "nadrzędna"
+
+#: ms_maps/models.py:67
+msgid "global subaisle"
+msgstr "globalna subalejka"
+
+#: ms_maps/models.py:69 ms_products/models.py:62
+msgid "subcategories"
+msgstr "subkategorie"
+
+#: ms_maps/models.py:112
+msgid "width"
+msgstr "szerokość"
+
+#: ms_maps/models.py:113
+msgid "height"
+msgstr "wysokość"
+
+#: ms_maps/models.py:115 ms_products/models.py:81 ms_products/models.py:116
+#: ms_products/models.py:195
+msgid "replaced by"
+msgstr "zastąpione przez"
+
+#: ms_maps/models.py:129
+#, python-brace-format
+msgid "Map of {0} (since {1})"
+msgstr "Mapa sklepu {0} (od {1})"
+
+#: ms_maps/models.py:135
+msgid "map"
+msgstr "mapa"
+
+#: ms_maps/models.py:136
+msgid "x coordinate"
+msgstr "współrzędna x"
+
+#: ms_maps/models.py:137
+msgid "y coordinate"
+msgstr "współrzędna y"
+
+#: ms_maps/models.py:138
+msgid "tile type"
+msgstr "rodzaj kwadratu siatki"
+
+#: ms_maps/models.py:139 ms_maps/models.py:154
+msgid "subaisle"
+msgstr "subalejka"
+
+#: ms_maps/models.py:140
+msgid "color"
+msgstr "kolor"
+
+#: ms_maps/models.py:141
+msgid "color is light"
+msgstr "czy kolor jest jasny"
+
+#: ms_maps/models.py:153
+msgid "tile"
+msgstr "kwadrat siatki"
+
+#: ms_maps/models.py:155
+msgid "is auto-generated"
+msgstr "automatycznie wygenerowane"
+
+#: ms_maps/views/aisle_management.py:20
+#: templates/mobishopper/maps/maps_overview.html:12
+msgid "Aisles"
+msgstr "Alejki"
+
+#: ms_maps/views/aisle_management.py:31
+msgid "Add aisle"
+msgstr "Dodaj alejkę"
+
+#: ms_maps/views/aisle_management.py:41
+#, python-brace-format
+msgid "Edit aisle {0}"
+msgstr "Edytuj alejkę {0}"
+
+#: ms_maps/views/aisle_management.py:52
+msgid "Add subaisle"
+msgstr "Dodaj subalejkę"
+
+#: ms_maps/views/aisle_management.py:64
+#, python-brace-format
+msgid "Edit subaisle {0}"
+msgstr "Edytuj subalejkę {0}"
+
+#: ms_maps/views/aisle_management.py:77
+msgid ""
+"Maps that use subaisles of this aisle will be modified. The tiles will be "
+"replaced with Product shelf tiles."
+msgstr ""
+"Mapy, które korzystają z subalejek tej alejki, zostaną zmodyfikowane. "
+"Kwadraty zostaną zastąpione kwadratami Półka z produktami."
+
+#: ms_maps/views/aisle_management.py:91
+msgid ""
+"Maps that use this subaisle will be modified. The tiles will be replaced "
+"with Product shelf tiles."
+msgstr ""
+"Mapy, które korzystają z tej subalejki, zostaną zmodyfikowane. Kwadraty "
+"zostaną zastąpione kwadratami Półka z produktami."
+
+#: ms_maps/views/api_views.py:292
+#, python-brace-format
+msgid "Changes saved to {0} location."
+msgid_plural "Changes saved to {0} locations."
+msgstr[0] "Zapisano zmiany w {0} lokalizacji."
+msgstr[1] "Zapisano zmiany w {0} lokalizacjach."
+msgstr[2] "Zapisano zmiany w {0} lokalizacjach."
+msgstr[3] "Zapisano zmiany w {0} lokalizacjach."
+
+#: ms_maps/views/api_views.py:295
+#, python-brace-format
+msgid ""
+"Could not compute the location of {0} product automatically, no changes were "
+"made to it."
+msgid_plural ""
+"Could not compute the locations of {0} products automatically, no changes "
+"were made to them."
+msgstr[0] ""
+"Nie udało się ustalić lokalizacji {0} produktu automatycznie, nie dokonano w "
+"nim zmian."
+msgstr[1] ""
+"Nie udało się ustalić lokalizacji {0} produktów automatycznie, nie dokonano "
+"w nich zmian."
+msgstr[2] ""
+"Nie udało się ustalić lokalizacji {0} produktów automatycznie, nie dokonano "
+"w nich zmian."
+msgstr[3] ""
+"Nie udało się ustalić lokalizacji {0} produktów automatycznie, nie dokonano "
+"w nich zmian."
+
+#: ms_maps/views/api_views.py:353
+msgid "No store provided"
+msgstr "Nie podano sklepu"
+
+#: ms_maps/views/api_views.py:358
+msgid "Not found"
+msgstr "Nie znaleziono"
+
+#: ms_maps/views/api_views.py:368
+msgid "Failed to save changes!"
+msgstr "Nie udało się zapisać zmian!"
+
+#: ms_maps/views/api_views.py:377
+msgid "You can only edit maps in a store context."
+msgstr "Możesz edytować mapy tylko w kontekście sklepu."
+
+#: ms_maps/views/api_views.py:489
+msgid ""
+"Map has been saved, but there was an error updating product locations to "
+"point to the new map."
+msgstr ""
+"Zapisano mapę, ale nie udało się przenieść lokalizacji produktów do nowej "
+"mapy."
+
+#: ms_maps/views/map_management.py:35
+msgid "Maps overview"
+msgstr "Przegląd map"
+
+#: ms_maps/views/map_management.py:60
+#: templates/mobishopper/maps/maps_overview.html:24
+msgid "Product locations"
+msgstr "Lokalizacje produktów"
+
+#: ms_maps/views/map_management.py:69
+msgid "Auto-assign product locations"
+msgstr "Automatycznie przypisz lokalizacje produktom"
+
+#: ms_maps/views/map_management.py:76
+msgid "Auto-assignment complete"
+msgstr "Automatyczne przypisanie zakończone"
+
+#: ms_maps/views/map_management.py:86 ms_maps/views/map_management.py:95
+msgid "No current map"
+msgstr "Brak ważnej mapy"
+
+#: ms_maps/views/map_management.py:133
+msgid "Edit map"
+msgstr "Edytuj mapę"
+
+#: ms_maps/views/map_management.py:149
+msgid "Map history"
+msgstr "Historia map"
+
+#: ms_maps/views/map_management.py:167
+msgid "Create new map"
+msgstr "Utwórz nową mapę"
+
+#: ms_products/constants.py:4
+msgid "pc"
+msgstr "szt"
+
+#: ms_products/constants.py:4
+msgid "kg"
+msgstr "kg"
+
+#: ms_products/constants.py:4
+msgid "dag"
+msgstr "dag"
+
+#: ms_products/constants.py:4
+msgid "g"
+msgstr "g"
+
+#: ms_products/constants.py:4
+msgid "L"
+msgstr "L"
+
+#: ms_products/constants.py:4
+msgid "mL"
+msgstr "mL"
+
+#: ms_products/constants.py:7
+msgid "number"
+msgstr "liczba"
+
+#: ms_products/constants.py:8
+msgid "text"
+msgstr "tekst"
+
+#: ms_products/constants.py:9
+msgid "yes/no"
+msgstr "tak/nie"
+
+#: ms_products/constants.py:10
+msgid "custom, from list"
+msgstr "własne, wybór z listy"
+
+#: ms_products/constants.py:11
+msgid "custom, user-provided"
+msgstr "własne, podane przez użytkownika"
+
+#: ms_products/constants.py:12
+msgid "weight"
+msgstr "waga"
+
+#: ms_products/constants.py:13
+msgid "volume"
+msgstr "objętość"
+
+#: ms_products/constants.py:14
+msgid "area"
+msgstr "obszar"
+
+#: ms_products/constants.py:15
+msgid "size"
+msgstr "rozmiar"
+
+#: ms_products/constants.py:16
+msgid "energy"
+msgstr "energia"
+
+#: ms_products/forms.py:37 ms_products/templatetags/msp_extras.py:60
+#: templates/mobishopper/products/categories_add_edit.html:17
+msgid "Subcategories"
+msgstr "Subkategorie"
+
+#: ms_products/forms.py:38
+#: templates/mobishopper/products/global_subaisles_list.html:13
+msgid "Description"
+msgstr "Opis"
+
+#: ms_products/forms.py:48
+#: templates/mobishopper/products/products_add_edit_form.html:29
+#: templates/mobishopper/products/products_search.html:17
+#: templates/mobishopper/products/products_show_edit.html:95
+msgid "Properties"
+msgstr "Właściwości"
+
+#: ms_products/forms.py:49
+msgid "Is in group"
+msgstr "Jest w grupie"
+
+#: ms_products/forms.py:112
+#: templates/mobishopper/products/products_add_edit_form.html:15
+#: templates/mobishopper/products/products_show_edit.html:81
+msgid "Amount"
+msgstr "Ilość"
+
+#: ms_products/forms.py:191
+msgid "Expected units"
+msgstr "Oczekiwane jednostki"
+
+#: ms_products/forms.py:197
+msgid "Custom unit names"
+msgstr "Własne nazwy jednostek"
+
+#: ms_products/forms.py:200
+msgid "Specify units available to the users, one per line."
+msgstr "Podaj jednostki dostępne dla użytkowników, po jednej w wierszu."
+
+#: ms_products/models.py:77
+msgid "logo"
+msgstr "logo"
+
+#: ms_products/models.py:79
+msgid "website"
+msgstr "strona internetowa"
+
+#: ms_products/models.py:111 ms_products/models.py:184
+msgid "photo"
+msgstr "zdjęcie"
+
+#: ms_products/models.py:112 ms_products/models.py:182
+msgid "vendor"
+msgstr "producent"
+
+#: ms_products/models.py:114 ms_products/models.py:183
+msgid "subcategory"
+msgstr "subkategoria"
+
+#: ms_products/models.py:140
+msgid "expected units"
+msgstr "oczekiwane jednostki"
+
+#: ms_products/models.py:142
+msgid "expected units (custom names)"
+msgstr "oczekiwane jednostki (własne nazwy)"
+
+#: ms_products/models.py:144
+msgid "subcategories where required"
+msgstr "subkategorie, gdzie wymagane"
+
+#: ms_products/models.py:147
+msgid "subcategories where recommended"
+msgstr "subkategorie, gdzie sugerowane"
+
+#: ms_products/models.py:186
+msgid "amount"
+msgstr "ilość"
+
+#: ms_products/models.py:187
+msgid "amount unit"
+msgstr "jednostka ilości"
+
+#: ms_products/models.py:188
+msgid "any amount possible"
+msgstr "dozwolona dowolna ilość"
+
+#: ms_products/models.py:191
+msgid "properties"
+msgstr "właściwości"
+
+#: ms_products/models.py:193
+msgid "properties (cache)"
+msgstr "właściwości (cache)"
+
+#: ms_products/models.py:198
+msgid "group"
+msgstr "grupa"
+
+#: ms_products/models.py:214
+#, python-brace-format
+msgid "{amount} pc"
+msgid_plural "{amount} pcs"
+msgstr[0] "{amount} szt"
+msgstr[1] "{amount} szt"
+msgstr[2] "{amount} szt"
+msgstr[3] "{amount} szt"
+
+#: ms_products/models.py:275
+msgid "is available"
+msgstr "jest dostępny"
+
+#: ms_products/models.py:277
+msgid "note"
+msgstr "notatka"
+
+#: ms_products/templatetags/msp_extras.py:60
+#: templates/mobishopper/products/global_subaisles_list.html:14
+#: templates/mobishopper/products/products_show_edit.html:69
+msgid "Subcategory"
+msgstr "Subkategoria"
+
+#: ms_products/tests.py:71 ms_products/utils.py:54
+#, python-brace-format
+msgid "{0} / pc"
+msgstr "{0} / szt"
+
+#: ms_products/views/product_management.py:61
+msgid "Products overview"
+msgstr "Przegląd produktów"
+
+#: ms_products/views/product_management.py:82
+msgid "Recent and upcoming"
+msgstr "Ostatnie i przyszłe zmiany"
+
+#: ms_products/views/product_management.py:216
+#: ms_products/views/product_management.py:263
+#: ms_products/views/product_organization.py:217
+#: ms_products/views/product_organization.py:270
+msgid "Choose a vendor"
+msgstr "Wybierz producenta"
+
+#: ms_products/views/product_management.py:226
+#: ms_products/views/product_management.py:272
+msgid "Choose a product group"
+msgstr "Wybierz grupę produktów"
+
+#: ms_products/views/product_management.py:283
+msgid "Add a product"
+msgstr "Dodaj produkt"
+
+#: ms_products/views/product_management.py:330
+msgid "Local overrides"
+msgstr "Lokalne nadpisania"
+
+#: ms_products/views/product_organization.py:30
+msgid "Categories"
+msgstr "Kategorie"
+
+#: ms_products/views/product_organization.py:44
+#: templates/mobishopper/products/categories_list.html:7
+msgid "Add new category"
+msgstr "Dodaj nową kategorię"
+
+#: ms_products/views/product_organization.py:59
+#: ms_products/views/product_organization.py:88
+msgid "Edit {}"
+msgstr "Edytuj {}"
+
+#: ms_products/views/product_organization.py:73
+#: templates/mobishopper/products/categories_list.html:8
+msgid "Add new subcategory"
+msgstr "Dodaj nową subkategorię"
+
+#: ms_products/views/product_organization.py:118
+msgid "Global subaisles"
+msgstr "Globalne subalejki"
+
+#: ms_products/views/product_organization.py:133
+msgid "Add global subaisle"
+msgstr "Dodaj globalną subalejkę"
+
+#: ms_products/views/product_organization.py:149
+msgid "Edit global subaisle {}"
+msgstr "Edytuj globalną subalejkę {0}"
+
+#: ms_products/views/product_organization.py:179
+#: templates/mobishopper/users/users_edit_global.html:26
+msgid "Groups"
+msgstr "Grupy"
+
+#: ms_products/views/product_organization.py:193
+#, python-brace-format
+msgid "Products in group {0}"
+msgstr "Produkty w grupie {0}"
+
+#: ms_products/views/product_organization.py:225
+msgid "Add product group"
+msgstr "Dodaj grupę produktów"
+
+#: ms_products/views/product_organization.py:285
+#, python-brace-format
+msgid "Edit product group {0}"
+msgstr "Edytuj grupę produktów {0}"
+
+#: ms_products/views/product_organization.py:317
+msgid ""
+"Deleting a product group will create new revisions of products in the group, "
+"with no group set. Those revisions will be valid immediately."
+msgstr ""
+"Usunięcie grupy produktów utworzy nowe rewizje produktów tej grupy, bez "
+"ustawionej grupy. Te rewizje będą obowiązywały od chwili usunięcia grupy."
+
+#: ms_products/views/product_organization.py:327
+msgid "Search groups"
+msgstr "Szukaj grup"
+
+#: ms_products/views/product_organization.py:339
+msgid "Standard properties"
+msgstr "Standardowe właściwości"
+
+#: ms_products/views/product_organization.py:357
+msgid "Add standard property"
+msgstr "Dodaj standardową właściwość"
+
+#: ms_products/views/product_organization.py:384
+#, python-brace-format
+msgid "Edit standard property {0}"
+msgstr "Edytuj standardową właściwość {0}"
+
+#: ms_products/views/product_organization.py:435
+msgid "Vendors"
+msgstr "Produecnci"
+
+#: ms_products/views/product_organization.py:449
+#, python-brace-format
+msgid "Products of vendor {0}"
+msgstr "Produkty producenta {0}"
+
+#: ms_products/views/product_organization.py:471
+msgid "Add vendor"
+msgstr "Dodaj producenta"
+
+#: ms_products/views/product_organization.py:504
+#, python-brace-format
+msgid "Edit vendor {0}"
+msgstr "Edytuj producenta {0}"
+
+#: ms_userdata/views/__init__.py:89
+#: templates/mobishopper/userdata/stats_overview.html:30
+msgid "Popular coupons"
+msgstr "Popularne kupony"
+
+#: ms_userdata/views/__init__.py:97
+#: templates/mobishopper/userdata/stats_overview.html:25
+msgid "Popular products"
+msgstr "Popularne produkty"
+
+#: ms_userdata/views/__init__.py:108
+#, python-brace-format
+msgid "Shopping list {0}"
+msgstr "Lista zakupów {0}"
+
+#: ms_userdata/views/__init__.py:116
+msgid "Launching MobiShopper…"
+msgstr "Uruchamianie aplikacji MobiShopper…"
+
+#: ms_userdata/views/rest_views.py:189 ms_userdata/views/rest_views.py:221
+msgid "You cannot access this list."
+msgstr "Nie masz dostępu do tej listy."
+
+#: ms_userdata/views/rest_views.py:195
+msgid "Cannot create invites for this list."
+msgstr "Nie można utworzyć zaproszeń dla tej listy."
+
+#: ms_userdata/views/rest_views.py:227
+msgid "Cannot delete invites for this list."
+msgstr "Nie można usunąć zaproszeń dla tej listy."
+
+#: ms_userdata/views/rest_views.py:238
+msgid "Invite has expired."
+msgstr "Zaproszenie wygasło."
+
+#: ms_userdata/views/rest_views.py:258
+msgid "Removed successfully."
+msgstr "Pomyślnie usunięto."
+
+#: ms_userdata/views/rest_views.py:260
+msgid "List member not found."
+msgstr "Nie znaleziono uczestnika listy."
+
+#: ms_userdata/views/rest_views.py:262
+msgid "Cannot remove list members."
+msgstr "Nie można usunąć uczestników listy."
+
+#: templates/mobishopper/base_fullwidth.html:9
+#: templates/mobishopper/base_sidebar.html:17
+msgid "Add"
+msgstr "Dodaj"
+
+#: templates/mobishopper/base_skel.html:25
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+#: templates/mobishopper/base_skel.html:38
+msgid "(Global)"
+msgstr "(Globalne)"
+
+#: templates/mobishopper/base_skel.html:39
+#: templates/mobishopper/base_skel.html:48
+msgid "No permissions"
+msgstr "Brak uprawnień"
+
+#: templates/mobishopper/base_skel.html:44
+msgid "Change store"
+msgstr "Zmień sklep"
+
+#: templates/mobishopper/base_skel.html:52
+msgid "Manage all stores"
+msgstr "Zarządzaj wszystkimi sklepami"
+
+#: templates/mobishopper/base_skel.html:54
+msgid "Details…"
+msgstr "Szczegóły…"
+
+#: templates/mobishopper/base_skel.html:64
+msgid "Change password"
+msgstr "Zmień hasło"
+
+#: templates/mobishopper/base_skel.html:65
+msgid "Log out"
+msgstr "Wyloguj się"
+
+#: templates/mobishopper/checkout_api_keys/checkout_api_keys_edit.html:17
+msgid "The API key will be shown <strong>once</strong> after creation."
+msgstr ""
+"Klucz API zostanie wyświetlony <strong>tylko raz</strong> po jego utworzeniu."
+
+#: templates/mobishopper/checkout_api_keys/checkout_api_keys_edit.html:20
+#: templates/mobishopper/checkout_api_keys/checkout_api_keys_edit.html:22
+msgid "Created API Key"
+msgstr "Utworzony klucz API"
+
+#: templates/mobishopper/checkout_api_keys/checkout_api_keys_edit.html:21
+msgid ""
+"An API key was created. Store it in a safe place, it won’t be shown again!"
+msgstr ""
+"Utworzono klucz API. Zachowaj go w bezpiecznym miejscu, nie zostanie on "
+"wyświetlony ponownie!"
+
+#: templates/mobishopper/checkout_api_keys/checkout_api_keys_list.html:10
+#: templates/mobishopper/my_permissions.html:9
+#: templates/mobishopper/products/products_show_edit.html:57
+msgid "Store"
+msgstr "Sklep"
+
+#: templates/mobishopper/checkout_api_keys/checkout_api_keys_list.html:11
+#: templates/mobishopper/deals/deals_table.html:21
+#: templates/mobishopper/maps/aisles_list.html:23
+#: templates/mobishopper/maps/maps_list.html:15
+#: templates/mobishopper/products/categories_list.html:22
+#: templates/mobishopper/products/global_subaisles_list.html:15
+#: templates/mobishopper/products/groups_list.html:27
+#: templates/mobishopper/products/products_local_overrides.html:20
+#: templates/mobishopper/products/products_table.html:15
+#: templates/mobishopper/products/properties_list.html:17
+#: templates/mobishopper/products/vendors_list.html:31
+#: templates/mobishopper/stores/stores_list.html:21
+#: templates/mobishopper/stores/stores_users.html:15
+#: templates/mobishopper/users/users_edit_global.html:17
+#: templates/mobishopper/users/users_list.html:27
+msgid "Actions"
+msgstr "Akcje"
+
+#: templates/mobishopper/confirm_delete.html:7
+#, python-format
+msgid "Are you sure you want to delete %(obj)s?"
+msgstr "Czy na pewno chcesz usunąć %(obj)s?"
+
+#: templates/mobishopper/confirm_delete.html:13
+msgid "No"
+msgstr "Nie"
+
+#: templates/mobishopper/deals/deals_overview.html:8
+msgid "Deals in effect"
+msgstr "Ważne promocje"
+
+#: templates/mobishopper/deals/deals_overview.html:12
+msgid "Coupons in effect"
+msgstr "Ważne kupony"
+
+#: templates/mobishopper/deals/deals_overview.html:16
+msgid "Coupon sets in effect"
+msgstr "Ważne zestawy kuponów"
+
+#: templates/mobishopper/deals/deals_overview.html:23
+msgid "Coupons used in last 24 hours"
+msgstr "Użyte kupony (ostatnie 24h)"
+
+#: templates/mobishopper/deals/deals_overview.html:27
+#: templates/mobishopper/home.html:34
+msgid "Coupons used in last 7 days"
+msgstr "Użyte kupony (ostatnie 7 dni)"
+
+#: templates/mobishopper/deals/deals_overview.html:31
+msgid "Coupon sets used in last 7 days"
+msgstr "Użyte zestawy kuponów (ostatnie 7 dni)"
+
+#: templates/mobishopper/deals/deals_overview.html:40
+msgid "Coupons used in store in last 24 hours"
+msgstr "Kupony użyte w sklepie (ostatnie 24h)"
+
+#: templates/mobishopper/deals/deals_overview.html:44
+msgid "Coupons used in store in last 7 days"
+msgstr "Kupony użyte w sklepie (ostatnie 7 dni)"
+
+#: templates/mobishopper/deals/deals_overview.html:48
+msgid "Coupon sets used in store in last 7 days"
+msgstr "Zestawy kuponów użyte w sklepie (ostatnie 7 dni)"
+
+#: templates/mobishopper/deals/deals_search_form.html:10
+#: templates/mobishopper/products/vendors_list.html:11
+msgid "Valid at:"
+msgstr "Obowiązuje w terminie:"
+
+#: templates/mobishopper/deals/deals_show_edit.html:41
+msgid "One use only"
+msgstr "Jednorazowego użytku"
+
+#: templates/mobishopper/deals/deals_show_edit.html:43
+msgid "Require log in"
+msgstr "Wymaga logowania"
+
+#: templates/mobishopper/deals/deals_show_edit.html:48
+msgid "Part of coupon sets"
+msgstr "Część zestawów kuponów"
+
+#: templates/mobishopper/deals/deals_show_edit.html:69
+msgid "Change details"
+msgstr "Zmień szczegóły"
+
+#: templates/mobishopper/deals/deals_table.html:18
+msgid "Coupons in set"
+msgstr "Kupony w zestawie"
+
+#: templates/mobishopper/deny_no_stores.html:4
+#: templates/mobishopper/deny_perm.html:4
+#: templates/mobishopper/deny_store_perm.html:4
+msgid "Access denied"
+msgstr "Brak dostępu"
+
+#: templates/mobishopper/deny_no_stores.html:5
+msgid "Your account cannot manage any stores."
+msgstr "Twoje konto nie może zarządzać sklepami."
+
+#: templates/mobishopper/deny_no_stores.html:6
+#: templates/mobishopper/deny_perm.html:6
+#: templates/mobishopper/deny_store_perm.html:6
+msgid "If you believe this is incorrect, contact your manager."
+msgstr "Jeżeli uważasz, że to błąd, skontaktuj się ze swoim managerem."
+
+#: templates/mobishopper/deny_perm.html:5
+msgid ""
+"Insufficient permissions. You might be able to access this feature in a "
+"different store, or in global management mode. You can change your store and "
+"check permissions in the top right menu."
+msgstr ""
+"Niewystarczające uprawnienia. Być może masz dostęp do tej funkcji w innym "
+"sklepie, lub w trybie zarządzania wszystkimi sklepami. Możesz zmienić swój "
+"sklep i sprawdzić uprawnienia w menu w prawym górnym rogu ekranu."
+
+#: templates/mobishopper/deny_store_perm.html:5
+msgid ""
+"You cannot manage this part of the selected store. You might be able to "
+"access this feature in a different store, or in global management mode. You "
+"can change your store and check permissions in the top right menu."
+msgstr ""
+"Nie możesz zarządzać tą częścią wybranego sklepu. Być może masz dostęp do "
+"tej funkcji w innym sklepie, lub w trybie zarządzania wszystkimi sklepami. "
+"Możesz zmienić swój sklep i sprawdzić uprawnienia w menu w prawym górnym "
+"rogu ekranu."
+
+#: templates/mobishopper/deny_unauthorized.html:7
+msgid "You do not have access to this page."
+msgstr "Nie masz dostępu do tej strony."
+
+#: templates/mobishopper/deny_unauthorized.html:7
+#: templates/registration/logged_out.html:9
+#: templates/registration/login.html:23
+#: templates/registration/password_reset_complete.html:10
+msgid "Log in"
+msgstr "Zaloguj się"
+
+#: templates/mobishopper/extras/menu.html:5
+#: templates/mobishopper/extras/sidebar.html:12
+msgid "(current)"
+msgstr "(aktualny)"
+
+#: templates/mobishopper/extras/paginator.html:3
+msgid "Page navigation"
+msgstr "Nawigacja pomiędzy stronami"
+
+#: templates/mobishopper/extras/show_all_chooser.html:3
+msgid "Show/hide items"
+msgstr "Pokaż/ukryj elementy"
+
+#: templates/mobishopper/extras/show_all_chooser.html:4
+msgid "Show only valid"
+msgstr "Pokaż tylko obowiązujące"
+
+#: templates/mobishopper/extras/show_all_chooser.html:4
+msgid "Show only visible"
+msgstr "Pokaż tylko widoczne"
+
+#: templates/mobishopper/extras/show_all_chooser.html:5
+msgid "Show all"
+msgstr "Pokaż wszystko"
+
+#: templates/mobishopper/extras/validity_text.html:2
+#: templates/mobishopper/maps/maps_list.html:26
+msgid "indefinitely"
+msgstr "bez ograniczeń"
+
+#: templates/mobishopper/extras/validity_text.html:3
+#, python-format
+msgid "from %(date_started)s"
+msgstr "od %(date_started)s"
+
+#: templates/mobishopper/extras/validity_text.html:5
+#, python-format
+msgid "until %(date_ended)s"
+msgstr "do %(date_ended)s"
+
+#: templates/mobishopper/home.html:20
+#: templates/mobishopper/products/products_overview.html:24
+msgid "Products in store"
+msgstr "Produkty w sklepie"
+
+#: templates/mobishopper/home.html:24
+msgid "Products without location"
+msgstr "Produkty bez lokalizacji"
+
+#: templates/mobishopper/home.html:30
+msgid "Deals and coupons in effect"
+msgstr "Ważne promocje i kupony"
+
+#: templates/mobishopper/home.html:38
+msgid "Recent shopping lists"
+msgstr "Ostatnie listy zakupów"
+
+#: templates/mobishopper/landing.html:8
+#: templates/mobishopper/userdata/shared_shopping_list.html:31
+msgid "an app to improve your shopping experience"
+msgstr "aplikacja wspomagająca Twoje zakupy"
+
+#: templates/mobishopper/landing.html:9
+#: templates/mobishopper/mobile_redirect.html:8
+msgid "Download for Android"
+msgstr "Pobierz na Androida"
+
+#: templates/mobishopper/landing.html:12
+msgid "Manage"
+msgstr "Zarządzaj"
+
+#: templates/mobishopper/landing.html:14
+msgid "Log in to manage"
+msgstr "Zaloguj się, aby zarządzać"
+
+#: templates/mobishopper/maps/aisles_list.html:7
+msgid "Add new aisle"
+msgstr "Dodaj nową alejkę"
+
+#: templates/mobishopper/maps/aisles_list.html:8
+msgid "Add new subaisle"
+msgstr "Dodaj nową subalejkę"
+
+#: templates/mobishopper/maps/aisles_list.html:19
+msgid "Aisle"
+msgstr "Alejka"
+
+#: templates/mobishopper/maps/aisles_list.html:20
+msgid "Code"
+msgstr "Kod"
+
+#: templates/mobishopper/maps/aisles_list.html:21
+#: templates/mobishopper/products/categories_list.html:20
+msgid "Visible"
+msgstr "Widoczny"
+
+#: templates/mobishopper/maps/aisles_list.html:22
+msgid "Has subcategories"
+msgstr "Ma podkategorie"
+
+#: templates/mobishopper/maps/maps_edit.html:6
+msgid ""
+"<strong>Warning:</strong> Maps already exist for this store. If you create a "
+"new map instead of editing the current map, product locations will not be "
+"copied over."
+msgstr ""
+"<strong>Uwaga:</strong> Mapy już istnieją dla tego sklepu. Jeżeli utworzysz "
+"nową mapę zamiast edytować istniejącą, lokalizacje produktów nie zostaną "
+"przekopiowane."
+
+#: templates/mobishopper/maps/maps_edit.html:11
+msgid ""
+"<strong>Warning:</strong> Newer maps exist for this store. Changes made in "
+"the newer maps might be overridden, and product locations might be changed "
+"incorrectly."
+msgstr ""
+"<strong>Uwaga:</strong> Nowsze mapy istnieją dla tego sklepu. Zmiany w "
+"nowszych mapach mogą zostać nadpisane, a lokalizacje produktów mogą zostać "
+"źle zmienione."
+
+#: templates/mobishopper/maps/maps_edit.html:15
+msgid ""
+"<strong>Hint:</strong> To start creating a map, set the desired map size at "
+"the bottom of the page and click <em>Resize</em>. Then you can select tile "
+"types from the right pane and click on tiles to make them represent a given "
+"subaisle or special tile. Further hints are available below the editor."
+msgstr ""
+"<strong>Podpowiedź:</strong> Aby utworzyć mapę, ustaw żądany rozmiar na dole "
+"strony i kliknij <em>Zmień rozmiar</em>. Potem możesz wybrać rodzaje "
+"kwadratów siatki z panelu po prawej stronie."
+
+#: templates/mobishopper/maps/maps_edit.html:24
+msgid "How to create a map?"
+msgstr "Jak utworzyć mapę?"
+
+#: templates/mobishopper/maps/maps_edit.html:30
+msgid ""
+"To create a map, start with a detailed floor plan of the store. Draw a grid "
+"on top of it. Select a grid size that fits the plan best. The grid should be "
+"mostly consistent. A good grid size is 0.5-1 m. The grid does not have to be "
+"square, but it will be presented as such to users."
+msgstr ""
+"Tworzenie mapy zacznij od zdobycia dokładnego planu sklepu. Narysuj na nim "
+"siatkę. Wybierz rozmiar siatki, który najlepiej pasuje do planu. Siatka "
+"powinna być równomierna. Dobry rozmiar siatki to 0,5–1 m. Siatka nie musi "
+"być kwadratowa, ale tak będzie prezentowana użytkownikom."
+
+#: templates/mobishopper/maps/maps_edit.html:31
+msgid ""
+"A good map uses Subaisle tiles extensively, with enough spaces around them. "
+"When converting the map for the editor, note that shelves (subaisles and "
+"product location tiles) are accesible from all space blocks around them. A "
+"typical shelf is best represented by <em>space | subaisle 1 | subaisle 2 | "
+"space</em>. Other tile types can also help customers walk around the store."
+msgstr ""
+"Dobra mapa używa głównie kwadratów typu Subalejka, z wystarczającą ilością "
+"miejsca wokół nich. Podczas przygotowywania mapy w edytorze należy pamiętać, "
+"że Półki (w tym Subalejki) są dostępne ze wszystkich kwadratów typu "
+"Przestrzeń wokół nich. Typową półkę najlepiej przedstawić jako "
+"<em>przestrzeń | subalejka 1 | subalejka 2 | przestrzeń</em>. Inne rodzaje "
+"kwadratów mogą pomóc klientom przemieszczać się po sklepie."
+
+#: templates/mobishopper/maps/maps_edit.html:39
+msgid "Special tiles and their meaning"
+msgstr "Specjalne kwadraty i ich znaczenie"
+
+#: templates/mobishopper/maps/maps_edit.html:45
+msgid "The following tile types are available:"
+msgstr "Dostępne są następujące rodzaje kwadratów siatki:"
+
+#: templates/mobishopper/maps/maps_edit.html:47
+msgid ""
+"Entrance — the entrance to the store, routes might begin at one of those "
+"tiles."
+msgstr "Wejście — wejście do sklepu, tam mogą zaczynać się trasy."
+
+#: templates/mobishopper/maps/maps_edit.html:48
+msgid "Exit — the exit of the store, routes might end at one of those tiles."
+msgstr ""
+"Wyjście — wyjście ze sklepu, trasy mogą kończyć się w jednym z takich "
+"punktów."
+
+#: templates/mobishopper/maps/maps_edit.html:49
+msgid "Entrance + Exit — routes might start and end at one of those tiles."
+msgstr "Wejście + Wyjście — tu mogą zaczynać się i kończyć trasy."
+
+#: templates/mobishopper/maps/maps_edit.html:50
+msgid "Cash register — routes might end at or involve one of those tiles."
+msgstr "Kasa — trasy mogą się kończyć w tym miejscu lub przez nie przechodzić."
+
+#: templates/mobishopper/maps/maps_edit.html:51
+msgid ""
+"Product shelf (without subaisle) — a tile that can contain products not "
+"placed in a subaisle. Products can be assigned with the Product Locations "
+"editor."
+msgstr ""
+"Półka z produktami (bez subalejki) — kwadrat siatki, który może zawierać "
+"produkty, które nie są w subalejce. Lokalizacje można ustalić w Edytorze "
+"lokalizacji produktów."
+
+#: templates/mobishopper/maps/maps_edit.html:52
+msgid ""
+"Space between aisles — customers can walk on those tiles and access nearby "
+"shelves."
+msgstr ""
+"Przestrzeń pomiędzy alejkami — klienci mogą przechodzić po tych kwadratach i "
+"pobierać produkty z pobliskich półek."
+
+#: templates/mobishopper/maps/maps_edit.html:53
+msgid ""
+"Inaccessible — tiles not accessible to customers, useful if the store is not "
+"a rectangular shape."
+msgstr ""
+"Niedostępne — miejsca niedostępne dla klientów; przydatne, jeżeli sklep nie "
+"jest prostokątny."
+
+#: templates/mobishopper/maps/maps_edit.html:55
+msgid ""
+"Routes start at the first product on the list, or at an entrance. Routes end "
+"at the last product, cash register, or an exit."
+msgstr ""
+"Trasy zaczynają się przy pierwszym produkcie z listy lub przy wejściu. "
+"Kończą się przy ostatnim produkcie, kasie, lub wyjściu."
+
+#: templates/mobishopper/maps/maps_list.html:13
+msgid "Width"
+msgstr "Szerokość"
+
+#: templates/mobishopper/maps/maps_list.html:14
+msgid "Height"
+msgstr "Wysokość"
+
+#: templates/mobishopper/maps/maps_list.html:30
+#: templates/mobishopper/products/products_local_overrides.html:32
+#: templates/mobishopper/products/products_table.html:26
+msgid "Show"
+msgstr "Pokaż"
+
+#: templates/mobishopper/maps/maps_no_current.html:6
+msgid "There is no valid map for the current store."
+msgstr "Nie istnieje aktualna mapa dla aktualnego sklepu."
+
+#: templates/mobishopper/maps/maps_no_current.html:6
+msgid "Show map history"
+msgstr "Pokaż historię map"
+
+#: templates/mobishopper/maps/maps_overview.html:7
+msgid "Show current map"
+msgstr "Pokaż aktualną mapę"
+
+#: templates/mobishopper/maps/maps_overview.html:9
+msgid "Aisles and subaisles"
+msgstr "Alejki i subalejki"
+
+#: templates/mobishopper/maps/maps_overview.html:16
+msgid "Subaisles"
+msgstr "Subalejki"
+
+#: templates/mobishopper/maps/maps_overview.html:20
+msgid "Global Aisles"
+msgstr "Globalne alejki"
+
+#: templates/mobishopper/maps/maps_overview.html:27
+msgid "Assigned locations"
+msgstr "Przypisane lokalizacje"
+
+#: templates/mobishopper/maps/maps_overview.html:31
+msgid "Auto-assigned locations"
+msgstr "Automatycznie przypisane lokalizacje"
+
+#: templates/mobishopper/maps/maps_overview.html:35
+msgid "Missing locations"
+msgstr "Brakujące lokalizacje"
+
+#: templates/mobishopper/maps/products_locations_auto_get.html:7
+#: templates/mobishopper/maps/products_locations_auto_results.html:7
+#, python-format
+msgid "Products with missing locations: <strong>%(missing)s</strong>"
+msgstr "Produkty bez lokalizacji: <strong>%(missing)s</strong>"
+
+#: templates/mobishopper/maps/products_locations_auto_get.html:9
+msgid "All locations are assigned!"
+msgstr "Wszystkie lokalizacje są przypisane!"
+
+#: templates/mobishopper/maps/products_locations_auto_get.html:11
+msgid ""
+"MobiShopper can auto-assign locations to products. This is possible only if "
+"subaisles have defined subcategories, and each subcategory is assigned to "
+"exactly one subaisle."
+msgstr ""
+"MobiShopper może automatycznie przypisać lokalizacje do produktów. Jest to "
+"możliwe jedynie, gdy subalejki mają zdefiniowane subkategorie, a każda "
+"subkategoria przypisana jest do dokładnie jednej subalejki."
+
+#: templates/mobishopper/maps/products_locations_auto_results.html:6
+msgid "Result"
+msgstr "Wynik"
+
+#: templates/mobishopper/maps/products_locations_auto_results.html:9
+msgid "Log"
+msgstr "Log"
+
+#: templates/mobishopper/maps/subaisle_form.html:12
+msgid "Select details source"
+msgstr "Zmień źródło szczegółów"
+
+#: templates/mobishopper/maps/subaisle_form.html:13
+msgid "Copy subaisle details from a global subaisle"
+msgstr "Kopiuj szczegóły z globalnej subalejki"
+
+#: templates/mobishopper/maps/subaisle_form.html:14
+msgid "Provide custom details"
+msgstr "Podaj szczegóły samodzielnie"
+
+#: templates/mobishopper/maps/subaisle_form.html:15
+msgid ""
+"You can base your subaisle’s details (name, description, subcategories) on a "
+"global aisle. Changes to the global aisle will also affect your aisle. If a "
+"global aisle is deleted, your subaisle will no longer be linked to it (but "
+"it will not be deleted)."
+msgstr ""
+"Możesz oprzeć subalejkę (nazwę, szczegóły, subkategorie) na alejce "
+"globalnej. Zmiany w globalnej alejce będą miały wpływ na alejkę w tym "
+"sklepie. Jeżeli globalna alejka zostanie usunięta, ta subalejka nie będzie z "
+"nią powiązana."
+
+#: templates/mobishopper/mobile_redirect.html:6
+msgid "Redirecting to MobiShopper…"
+msgstr "Uruchamianie aplikacji MobiShopper…"
+
+#: templates/mobishopper/mobile_redirect.html:7
+msgid ""
+"You will be redirected to the MobiShopper app shortly, if the app is "
+"installed."
+msgstr ""
+"Zostaniesz za chwilę przekierowany(a) do aplikacji MobiShopper, o ile "
+"aplikacja jest zainstalowana."
+
+#: templates/mobishopper/my_permissions.html:10
+msgid "Active"
+msgstr "Aktywne"
+
+#: templates/mobishopper/my_permissions.html:19
+msgid "active"
+msgstr "aktywne"
+
+#: templates/mobishopper/my_permissions.html:19
+msgid "set as active"
+msgstr "ustaw jako aktywne"
+
+#: templates/mobishopper/my_permissions.html:29
+msgid "Global management"
+msgstr "Zarządzanie globalne"
+
+#: templates/mobishopper/my_permissions.html:31
+msgid "(active)"
+msgstr "(aktywne)"
+
+#: templates/mobishopper/my_permissions.html:31
+msgid " (set as active)"
+msgstr " (ustaw jako aktywne)"
+
+#: templates/mobishopper/products/categories_list.html:19
+msgid "Category"
+msgstr "Kategoria"
+
+#: templates/mobishopper/products/categories_list.html:21
+msgid "Valid products"
+msgstr "Obowiązujące produkty"
+
+#: templates/mobishopper/products/categories_list.html:33
+#: templates/mobishopper/products/categories_list.html:43
+#: templates/mobishopper/products/subcategories_add_edit.html:20
+msgid "Search for products"
+msgstr "Szukaj produktów"
+
+#: templates/mobishopper/products/global_subaisles_list.html:12
+msgid "Subaisle"
+msgstr "Subalejka"
+
+#: templates/mobishopper/products/groups_add_edit.html:22
+msgid ""
+"<strong>Warning:</strong> Editing a product group will create new revisions "
+"of all currently valid products in the group. Those revisions will have the "
+"same start date as the group."
+msgstr ""
+"<strong>Uwaga:</strong> Edycja grupy produktów spowoduje utworzenie nowych "
+"rewizji wszystkich aktualnie obowiązujących produktów. Data początku "
+"ważności rewizji będzie taka, jak data początku ważności grupy."
+
+#: templates/mobishopper/products/groups_list.html:26
+msgid "Valid products in group"
+msgstr "Obowiązujące produkty w grupie"
+
+#: templates/mobishopper/products/groups_list.html:37
+#: templates/mobishopper/products/vendors_list.html:41
+msgid "Show products"
+msgstr "Pokaż produkty"
+
+#: templates/mobishopper/products/groups_show.html:13
+msgid ""
+"To add/remove products to/from a group, use the <em>Group</em> field when "
+"editing products."
+msgstr ""
+"Aby dodać/usunąć produkty z/do grupy, użyj pola <em>Grupa</em> w edytorze "
+"produktów."
+
+#: templates/mobishopper/products/product_history_data.html:4
+msgid "Date added"
+msgstr "Data dodania"
+
+#: templates/mobishopper/products/product_history_data.html:10
+#: templates/mobishopper/products/products_show_edit.html:84
+msgid "Price/amount"
+msgstr "Cena/ilość"
+
+#: templates/mobishopper/products/products_add_edit_form.html:30
+#: templates/mobishopper/products/products_search.html:18
+#: templates/mobishopper/users/users_edit_global.html:33
+msgid "Loading…"
+msgstr "Ładowanie…"
+
+#: templates/mobishopper/products/products_local_overrides.html:16
+#: templates/mobishopper/products/products_show_edit.html:111
+msgid "Available"
+msgstr "Dostępne"
+
+#: templates/mobishopper/products/products_local_overrides.html:19
+#: templates/mobishopper/products/products_show_edit.html:115
+msgid "Note"
+msgstr "Notatka"
+
+#: templates/mobishopper/products/products_local_overrides.html:26
+msgid "(has replacement)"
+msgstr "(został zastąpiony)"
+
+#: templates/mobishopper/products/products_local_overrides.html:33
+msgid "Edit override"
+msgstr "Edytuj nadpisanie"
+
+#: templates/mobishopper/products/products_local_overrides.html:45
+#, python-format
+msgid ""
+"\n"
+"        To add a local override, use the <a href=\"%(list_url)s\">Products "
+"List</a> or <a href=\"%(search_url)s\">Products Search</a>. The product "
+"information page will offer you to add an override, or change an existing "
+"one.\n"
+"        "
+msgstr ""
+"\n"
+"        Aby dodać lokalne nadpisanie, użyj <a href=\"%(list_url)s\">Listy "
+"produktów</a> lub <a href=\"%(search_url)s\">Wyszukiwania produktów</a>. "
+"Strona informacji o produkcie umożliwia dodanie lub zmianę lokalnego "
+"nadpisania.\n"
+"        "
+
+#: templates/mobishopper/products/products_overview.html:8
+msgid "All products"
+msgstr "Wszystkie produkty"
+
+#: templates/mobishopper/products/products_overview.html:12
+msgid "Recently changed"
+msgstr "Ostatnio zmienione"
+
+#: templates/mobishopper/products/products_overview.html:16
+#: templates/mobishopper/products/products_overview.html:39
+#: templates/mobishopper/products/products_recent_upcoming.html:7
+msgid "Upcoming changes"
+msgstr "Przyszłe zmiany"
+
+#: templates/mobishopper/products/products_overview.html:28
+msgid "Recently changed in store"
+msgstr "Ostatnio zmienione w sklepie"
+
+#: templates/mobishopper/products/products_overview.html:32
+#: templates/mobishopper/products/products_overview.html:39
+#: templates/mobishopper/products/products_recent_upcoming.html:7
+msgid "Upcoming changes in store"
+msgstr "Przyszłe zmiany w sklepie"
+
+#: templates/mobishopper/products/products_overview.html:43
+#: templates/mobishopper/products/products_recent_upcoming.html:11
+msgid "Recent changes in store"
+msgstr "Ostatnie zmiany w sklepie"
+
+#: templates/mobishopper/products/products_overview.html:43
+#: templates/mobishopper/products/products_recent_upcoming.html:11
+msgid "Recent changes"
+msgstr "Ostatnie zmiany"
+
+#: templates/mobishopper/products/products_show_edit.html:19
+#: templates/mobishopper/products/products_show_edit.html:50
+msgid "Details"
+msgstr "Szczegóły"
+
+#: templates/mobishopper/products/products_show_edit.html:23
+msgid "Edit local overrides"
+msgstr "Edytuj lokalne nadpisania"
+
+#: templates/mobishopper/products/products_show_edit.html:36
+msgid "Deals in store"
+msgstr "Promocje w sklepie"
+
+#: templates/mobishopper/products/products_show_edit.html:40
+msgid "History"
+msgstr "Historia"
+
+#: templates/mobishopper/products/products_show_edit.html:53
+msgid "Status"
+msgstr "Stan"
+
+#: templates/mobishopper/products/products_show_edit.html:54
+msgid "Unavailable in store"
+msgstr "Niedostępne w sklepie"
+
+#: templates/mobishopper/products/products_show_edit.html:82
+msgid "(/any)"
+msgstr "(/dowolna)"
+
+#: templates/mobishopper/products/products_show_edit.html:108
+msgid "Current overrides"
+msgstr "Aktualne nadpisania"
+
+#: templates/mobishopper/products/products_show_edit.html:122
+msgid "Change validity dates"
+msgstr "Zmień daty obowiązywania"
+
+#: templates/mobishopper/products/products_show_edit.html:134
+msgid "No overrides in effect."
+msgstr "Nie obowiązują żadne nadpisania."
+
+#: templates/mobishopper/products/products_show_edit.html:138
+msgid "New local override"
+msgstr "Nowe lokalne nadpisanie"
+
+#: templates/mobishopper/products/products_show_edit.html:165
+msgid "Next version (current)"
+msgstr "Następna wersja (aktualna)"
+
+#: templates/mobishopper/products/products_show_edit.html:165
+msgid "Next version"
+msgstr "Następna wersja"
+
+#: templates/mobishopper/products/products_show_edit.html:168
+msgid "This version"
+msgstr "Ta wersja"
+
+#: templates/mobishopper/products/products_show_edit.html:171
+msgid "Previous version"
+msgstr "Poprzednia wersja"
+
+#: templates/mobishopper/products/properties_list.html:13
+msgid "Property"
+msgstr "Właściwość"
+
+#: templates/mobishopper/products/properties_list.html:14
+msgid "Units"
+msgstr "Jednostki"
+
+#: templates/mobishopper/products/properties_list.html:15
+msgid "Required in"
+msgstr "Wymagane w"
+
+#: templates/mobishopper/products/properties_list.html:16
+msgid "Recommended in"
+msgstr "Sugerowane w"
+
+#: templates/mobishopper/products/subcat_menu_field.html:16
+msgid ""
+"Press <strong>Ctrl</strong> (or <strong>Command</strong> on a Mac) to select "
+"multiple items or to deselect an item."
+msgstr ""
+"Wciśnij <strong>Ctrl</strong> (lub <strong>Command</strong> na Macu), aby "
+"wybrać wiele pozycji lub odznaczyć pozycję."
+
+#: templates/mobishopper/products/subcategories_add_edit.html:18
+msgid "Recent products"
+msgstr "Ostatnie produkty"
+
+#: templates/mobishopper/products/vendors_add_edit.html:21
+msgid ""
+"<strong>Warning:</strong> Editing a vendor will create new revisions of all "
+"currently valid products of the vendor. Those revisions will have the same "
+"start date as the vendor."
+msgstr ""
+"<strong>Uwaga:</strong> Edytowanie producenta utworzy nowe rewizje "
+"wszystkich obowiązujących produktów tego producenta. Te rewizje będą miały "
+"taką samą datę początku ważności, jak producent."
+
+#: templates/mobishopper/products/vendors_show.html:12
+msgid ""
+"To add/remove products to/from a vendor, use the <em>Vendor</em> field when "
+"editing products."
+msgstr ""
+"Aby dodać/usunąć produkty producent, użyj pola <em>Producent</em> w edytorze "
+"produktów."
+
+#: templates/mobishopper/stores/stores_edit.html:29
+msgid "Consider hiding unused stores instead."
+msgstr "Być może lepiej byłoby ukryć nieużywane sklepy."
+
+#: templates/mobishopper/stores/stores_list.html:20
+msgid "Region code"
+msgstr "Kod regionu"
+
+#: templates/mobishopper/userdata/popular_coupons_table.html:13
+#: templates/mobishopper/userdata/popular_products_table.html:12
+msgid "Last 7 days"
+msgstr "Ostatnie 7 dni"
+
+#: templates/mobishopper/userdata/popular_coupons_table.html:14
+#: templates/mobishopper/userdata/popular_products_table.html:13
+msgid "Last 24 hours"
+msgstr "Ostatnie 24 godziny"
+
+#: templates/mobishopper/userdata/shared_shopping_list.html:9
+#, python-format
+msgid "A shopping list by %(owner)s"
+msgstr "Lista zakupów użytkownika %(owner)s"
+
+#: templates/mobishopper/userdata/stats_overview.html:8
+msgid "Shopping lists (last 24 hours)"
+msgstr "Listy zakupów (ostatnie 24h)"
+
+#: templates/mobishopper/userdata/stats_overview.html:12
+msgid "Shopping lists (last 7 days)"
+msgstr "Listy zakupów (ostatnie 7d)"
+
+#: templates/mobishopper/userdata/stats_overview.html:17
+msgid "Coupons used (last 24 hours)"
+msgstr "Użyte kupony (ostatnie 24h)"
+
+#: templates/mobishopper/userdata/stats_overview.html:21
+msgid "Coupons used (last 7 days)"
+msgstr "Użyte kupony (ostatnie 7 dni)"
+
+#: templates/mobishopper/userdata/stats_overview.html:28
+msgid "Show all popular products"
+msgstr "Pokaż wszystkie popularne produkty"
+
+#: templates/mobishopper/userdata/stats_overview.html:33
+msgid "Show all popular coupons"
+msgstr "Pokaż wszystkie popularne kupony"
+
+#: templates/mobishopper/users/users_change_type_global.html:14
+msgid ""
+"If you choose to remove all permissions, the user will not have access to "
+"the management panel. If you choose a lower permission level, the user will "
+"lose access to some parts of the interface. To edit store-level permissions, "
+"or to see current permissions, edit the account settings."
+msgstr ""
+"Jeżeli usuniesz wszystkie uprawnienia, użytkownik straci dostęp do panelu "
+"zarządzania. Jeżeli wybierzesz niższy poziom uprawnień, użytkownik straci "
+"dostęp do części interfejsu. Aby edytować uprawnienia na poziomie sklepów, "
+"lub aby zobaczyć aktualne uprawnienia, edytuj ustawienia konta."
+
+#: templates/mobishopper/users/users_change_type_local.html:14
+msgid ""
+"Removing permissions does not affect other stores. The user will lose access "
+"to the management panel if permissions are removed and they cannot manage "
+"any other stores. To see current permissions, edit the account settings."
+msgstr ""
+"Usunięcie uprawnień nie ma wpływu na inne sklepy. Użytkownik utraci dostęp "
+"do panelu zarządzania, jeżeli usunięte uprawnienia były jego jedynymi. Aby "
+"zobaczyć aktualne uprawnienia, edytuj ustawienia konta."
+
+#: templates/mobishopper/users/users_edit_local.html:26
+msgid "Permissions"
+msgstr "Uprawnienia"
+
+#: templates/mobishopper/users/users_edit_local.html:29
+msgid "Manages this store (required)"
+msgstr "Zarządza tym sklepem (wymagane)"
+
+#: templates/mobishopper/users/users_edit_local.html:40
+msgid ""
+"If this user manages other stores, they will retain access to the management "
+"panel. Otherwise, the panel will not be available to them."
+msgstr ""
+"Jeżeli użytkownik zarządza innymi sklepami, będzie miał dalej dostęp do "
+"panelu zarządzania. W przeciwnym wypadku utraci do niego dostep."
+
+#: templates/mobishopper/users/users_edit_local.html:42
+msgid ""
+"You are editing your own account. You cannot remove your permissions to "
+"manage the store or its employees. Other employees with editing access can "
+"change those permissions on your account."
+msgstr ""
+"Edytujesz swoje własne konto. Nie możesz usunąć swoich uprawnień do "
+"zarządzania sklepem i pracownikami. Inni pracownicy z możliwością edycji "
+"mogą zmienić Twoje uprawnienia w tym zakresie."
+
+#: templates/registration/logged_out.html:7
+msgid "Logged out"
+msgstr "Wylogowano"
+
+#: templates/registration/login.html:7
+msgid "Please log in"
+msgstr "Zaloguj się"
+
+#: templates/registration/login.html:10
+msgid "Incorrect e-mail or password."
+msgstr "Niepoprawny e-mail lub hasło."
+
+#: templates/registration/login.html:14
+msgid ""
+"You do not have access to this page. Log in as another user or contact your "
+"manager."
+msgstr ""
+"Nie masz dostępu do tej strony. Zaloguj się jako inny użytkownik lub "
+"skontaktuj się z managerem."
+
+#: templates/registration/login.html:28
+msgid "Lost password?"
+msgstr "Nie pamiętasz hasła?"
+
+#: templates/registration/password_change_done.html:7
+msgid "Password change complete"
+msgstr "Pomyślnie zmieniono hasło"
+
+#: templates/registration/password_change_done.html:9
+msgid "Your password has been changed."
+msgstr "Twoje hasło zostało zmienione."
+
+#: templates/registration/password_change_done.html:10
+msgid "Dashboard"
+msgstr "Przegląd"
+
+#: templates/registration/password_change_form.html:7
+msgid "Password change"
+msgstr "Zmiana hasłą"
+
+#: templates/registration/password_change_form.html:9
+msgid "Type your old password, and then your new password twice."
+msgstr "Wpisz swoje stare hasło, a następnie nowe hasło dwa razy."
+
+#: templates/registration/password_change_form.html:11
+#: templates/registration/password_reset_confirm.html:12
+msgid "Failed to change your password."
+msgstr "Nie udało się zmienić hasła."
+
+#: templates/registration/password_change_form.html:17
+msgid "Old password"
+msgstr "Stare hasło"
+
+#: templates/registration/password_change_form.html:24
+msgid "Change my password"
+msgstr "Zmień moje hasło"
+
+#: templates/registration/password_reset_complete.html:7
+msgid "Password reset complete"
+msgstr "Pomyślnie zresetowano hasło"
+
+#: templates/registration/password_reset_complete.html:9
+msgid "Your password has been reset."
+msgstr "Twoje hasło zostało zresetowane."
+
+#: templates/registration/password_reset_confirm.html:7
+#: templates/registration/password_reset_done.html:7
+#: templates/registration/password_reset_form.html:7
+msgid "Password reset"
+msgstr "Reset hasła"
+
+#: templates/registration/password_reset_confirm.html:10
+msgid "Please set a new password."
+msgstr "Ustaw nowe hasło."
+
+#: templates/registration/password_reset_confirm.html:27
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Link resetowania hasła był nieprawidłowy, prawdopodobnie był już "
+"wykorzystany. Poproś o ponowną zmianę hasła."
+
+#: templates/registration/password_reset_done.html:9
+msgid "Please check your e-mail for reset instructions."
+msgstr "Sprawdź swój e-mail, aby zresetować hasło."
+
+#: templates/registration/password_reset_form.html:10
+msgid "Incorrect e-mail."
+msgstr "Zły adres e-mail."
+
+#: templates/registration/password_reset_form.html:18
+msgid "Reset my password"
+msgstr "Zresetuj moje hasło"
+
+#: templates/registration/password_reset_form.html:23
+msgid "Back to the login page"
+msgstr "Powrót do strony logowania"
+
+#~ msgid "Created API key"
+#~ msgstr "Utworzony klucz API"

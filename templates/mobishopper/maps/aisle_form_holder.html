@@ -1,0 +1,21 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load msm_extras %}
+{% block content %}
+    {% if form_name == "aisle" %}
+        {% aisle_form form %}
+    {% elif form_name == "subaisle" %}
+        {% subaisle_form form copy_global run_js=False %}
+    {% else %}
+        ERROR: Invalid form type.
+    {% endif %}
+{% endblock %}
+{% block extra_js %}
+    {{ form.media }}
+{% endblock %}
+{% block js_config %}
+    {% if form_name == "subaisle" %}
+        <script>prepareSubaisleForm();</script>
+    {% endif %}
+{% endblock %}

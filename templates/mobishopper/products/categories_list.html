@@ -1,0 +1,52 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% block extra_title %}
+<a class="btn btn-outline-success" href="{% url "ms_products:categories_add" %}">{% trans "Add new category" %}</a>
+<a class="btn btn-outline-success" href="{% url "ms_products:subcategories_add" %}">{% trans "Add new subcategory" %}</a>
+{% endblock %}
+{% block content %}
+
+    {% show_all_chooser show_all False %}
+    {% if not categories %}
+        {% no_results_msg %}
+    {% else %}
+        <table class="table table-hover table-vam">
+            <thead>
+            <tr>
+                <th>{% trans "Category" %}</th>
+                <th>{% trans "Visible" %}</th>
+                <th>{% trans "Valid products" %}</th>
+                <th>{% trans "Actions" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for cat, subcats in categories %}
+                <tr>
+                    <td><strong>{{ cat.html_link }}</strong></td>
+                    <td>{% bool_yesno cat.visible %}</td>
+                    <td></td>
+                <td>
+                    <a class="btn btn-outline-info" href="{% url "ms_products:categories_edit" cat.id %}">{% trans "Edit" %}</a>
+                    <a class="btn btn-outline-secondary" href="{% url "ms_products:categories_search" cat.id %}">{% trans "Search for products" %}</a>
+                </td>
+                </tr>
+                {% for subcat in subcats %}
+                    <tr>
+                        <td class="pl-4">› {{ subcat.html_link }}</td>
+                        <td>{% bool_yesno subcat.visible %}</td>
+                        <td>{{ subcat.size }}</td>
+                        <td>
+                            <a class="btn btn-outline-info" href="{% url "ms_products:subcategories_edit" subcat.id %}">{% trans "Edit" %}</a>
+                            <a class="btn btn-outline-secondary" href="{% url "ms_products:subcategories_search" subcat.id %}">{% trans "Search for products" %}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    {% paginator overrides %}
+{% endblock %}

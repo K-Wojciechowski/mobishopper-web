@@ -1,0 +1,39 @@
+{% extends "mobishopper/base_fullwidth.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% block content %}
+    <h2>{% trans "Stores" %}</h2>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th width="16%">{% trans "Store" %}</th>
+            <th width="14%">{% trans "Active" %}</th>
+            {% for perm_title in local_permissions_short_titles %}
+                <th class="text-center" width="14%">{{ perm_title }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        {% for usp in ms_permissions %}
+            <tr>
+                <td>{{ usp.store }}</td>
+                <td>{% if usp.store == ms_store %}{% trans "active" %}{% else %}<a href="{% url 'ms_baseline:change_store' sid=usp.store.id %}?next={{ ms_next_url }}">{% trans "set as active" %}</a>{% endif %}</td>
+                <td class="text-center">{% if usp.can_manage_products %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %}</td>
+                <td class="text-center">{% if usp.can_manage_maps %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %}</td>
+                <td class="text-center">{% if usp.can_manage_deals %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %}</td>
+                <td class="text-center">{% if usp.can_manage_employees %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %}</td>
+                <td class="text-center">{% if usp.can_view_statistics %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>{% trans "Global management" %}</h2>
+    <ul class="list-unstyled">
+        <li><div class="iconbox">{% if user.is_global_manager %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %} {% trans "Global manager" %}{% if user.is_global_manager %}&nbsp;{% if not ms_store %}{% trans "(active)" %}{% else %}<a href="{% url 'ms_baseline:change_store' sid=0 %}?next={{ ms_next_url }}">{% trans " (set as active)" %}</a>{% endif %}{% endif %}
+        </div></li>
+        <li><div class="iconbox">{% if user.can_manage_global_products %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %} {% trans "Can manage global products" %}</div></li>
+        <li><div class="iconbox">{% if user.can_manage_global_deals %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %} {% trans "Can manage global deals" %}</div></li>
+        <li><div class="iconbox">{% if user.can_view_global_statistics %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %} {% trans "Can view global statistics" %}</div></li>
+        <li><div class="iconbox">{% if user.can_manage_users %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %} {% trans "Can manage users" %}</div></li>
+        <li><div class="iconbox">{% if user.can_manage_stores %}{% bsicon "check2" 24 %}{% else %}{% bsicon "dash" 24 %}{% endif %} {% trans "Can manage stores" %}</div></li>
+    </ul>
+{% endblock %}

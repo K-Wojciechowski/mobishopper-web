@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load ms_extras %}
+<div class="card-box card-box-top">
+    <form class="form-inline" action="" method="GET">
+        {% inline_form_field search_form.name %}
+        {% if not is_coupon_set %}
+            {% inline_form_field search_form.product %}
+        {% endif %}
+        <div class="d-flex">
+            <label class="mr-2" for="{{ search_form.valid_at.id_for_label }}">{% trans "Valid at:" %}</label>
+            {{ search_form.valid_at }}
+        </div>
+        <div class="d-inline-block ml-2 mr-2">
+            {% check_radio_field search_form.is_store %}
+        </div>
+        <button class="btn btn-secondary">{% bsiconbox "search" 12 "Search" %}</button>
+    </form>
+</div>

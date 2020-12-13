@@ -1,0 +1,1 @@
+"""Deals module for MobiShopper."""

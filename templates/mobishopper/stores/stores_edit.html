@@ -1,0 +1,35 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form_errors form type='all' %}
+        {% bootstrap_field form.name layout="horizontal" %}
+        {% bootstrap_field form.address layout="horizontal" %}
+        {% bootstrap_field form.city layout="horizontal" %}
+        {% bootstrap_field form.region_code layout="horizontal" %}
+        {% bootstrap_field form.hidden layout="horizontal" %}
+
+
+        {% buttonbox_save %}
+
+        {% if not is_adding %}
+            {% if user.is_superuser or user.can_manage_users %}
+                <h2>Actions</h2>
+                <p>
+                    {% if user.can_manage_users or user.is_superuser %}
+                        <a class="btn btn-outline-info" href="{% url 'ms_baseline:stores_users' id %}">{% bsiconbox "people" 12 "View employees of store" %}</a>
+                    {% endif %}
+                </p>
+                {% if user.is_superuser %}
+                    <p>
+                        <a href="{% url "ms_baseline:stores_delete" id %}" class="btn btn-outline-danger">{% bsiconbox "trash" 12 "Delete" %}</a>
+                        <span class="text-danger">{% trans "Consider hiding unused stores instead." %}</span>
+                    </p>
+                {% endif %}
+                </form>
+            {% endif %}
+        {% endif %}
+{% endblock %}

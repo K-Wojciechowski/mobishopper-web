@@ -1,0 +1,85 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+    <dl class="row">
+        <dt class="col-sm-3">{% trans "Name" %}</dt>
+        <dd class="col-sm-9">{{ object.name }}</dd>
+
+        {% if is_coupon_set %}
+            <dt class="col-sm-3">{% trans "Coupons" %}</dt>
+            <dd class="col-sm-9">
+                <ul class="mb-0">
+                    {% for coupon in object.coupons.all %}
+                        <li>{{ coupon.html_link }}</li>
+                    {% endfor %}
+                </ul>
+            </dd>
+        {% else %}
+            <dt class="col-sm-3">{% trans "Product" %}</dt>
+            <dd class="col-sm-9">{{ object.product.html_link }}</dd>
+            <dt class="col-sm-3">{% trans "Price" %}</dt>
+            <dd class="col-sm-9">{% money object.price %}</dd>
+        {% endif %}
+
+        <dt class="col-sm-3">{% trans "Is global" %}</dt>
+        <dd class="col-sm-9">{% bool_yesno object.is_global %}</dd>
+
+        {% if not object.is_global %}
+            <dt class="col-sm-3">{% trans "Stores" %}</dt>
+            <dd class="col-sm-9">
+                <ul class="mb-0">
+                    {% for store in object.stores.all %}
+                        <li>{{ store.html_link }}</li>
+                    {% endfor %}
+                </ul>
+            </dd>
+        {% endif %}
+
+        {% if is_coupon or is_coupon_set %}
+            <dt class="col-sm-3">{% trans "One use only" %}</dt>
+            <dd class="col-sm-9">{% bool_yesno object.one_use %}</dd>
+            <dt class="col-sm-3">{% trans "Require log in" %}</dt>
+            <dd class="col-sm-9">{% bool_yesno object.requre_account %}</dd>
+        {% endif %}
+
+        {% if is_coupon and part_of_coupon_sets %}
+            <dt class="col-sm-3">{% trans "Part of coupon sets" %}</dt>
+            <dd class="col-sm-9">
+                <ul class="mb-0">
+                    {% for coupon_set in part_of_coupon_sets %}
+                        <li>{{ coupon_set.html_link }}</li>
+                    {% endfor %}
+                </ul>
+            </dd>
+        {% endif %}
+
+        <dt class="col-sm-3">{% trans "Valid from" %}</dt>
+        <dd class="col-sm-9">{{ object.date_started|date:"DATETIME_FORMAT" }}</dd>
+
+        <dt class="col-sm-3">{% trans "Valid until" %}</dt>
+        <dd class="col-sm-9">{{ object.date_ended|date:"DATETIME_FORMAT" }}</dd>
+    </dl>
+
+    {% if show_editing %}
+        <hr>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <h2>{% trans "Change details" %}</h2>
+            {% bootstrap_form_errors form type='all' %}
+
+            {% bootstrap_field form.name layout="horizontal" %}
+            {% bootstrap_field form.date_started layout="horizontal" %}
+            {% bootstrap_field form.date_ended layout="horizontal" %}
+
+            {% buttonbox_save %}
+        </form>
+    {% endif %}
+
+{% endblock %}
+{% block extra_js %}
+    {% if show_editing %}
+        {{ form.media }}
+    {% endif %}
+{% endblock %}

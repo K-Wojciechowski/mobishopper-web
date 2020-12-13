@@ -1,0 +1,39 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="card-box card-box-top">
+        <form class="form-inline" action="" method="GET">
+            {% inline_form_field search_form.name %}
+            {% inline_form_field search_form.city %}
+            {% inline_form_field search_form.visibility %}
+            <button class="btn btn-secondary">{% bsiconbox  "search" 12 "Search" %}</button>
+        </form>
+    </div>
+
+    <table class="table table-hover table-vam">
+        <thead>
+        <tr>
+            <th>{% trans "Name" %}</th>
+            <th>{% trans "City" %}</th>
+            <th>{% trans "Region code" %}</th>
+            <th>{% trans "Actions" %}</th>
+        </tr>
+        </thead>
+        {% for s in stores %}
+            <tr>
+                <td>{{ s.html_link }}</td>
+                <td>{{ s.city }}</td>
+                <td>{{ s.region_code }}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="{% url "ms_baseline:stores_edit" s.id %}">{% bsiconbox "pencil" 12 "Edit" %}</a>
+                    {% if user.is_superuser or user.can_manage_employees %}
+                    <a class="btn btn-sm btn-info" href="{% url "ms_baseline:stores_users" s.id %}">{% bsiconbox "people" 12 "Employees" %}</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% paginator stores %}
+{% endblock %}

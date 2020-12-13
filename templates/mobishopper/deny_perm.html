@@ -1,0 +1,7 @@
+{% extends "mobishopper/base_fullwidth.html" %}
+{% load i18n %}
+{% block content %}
+<h1>{% trans "Access denied" %}</h1>
+    <p>{% trans "Insufficient permissions. You might be able to access this feature in a different store, or in global management mode. You can change your store and check permissions in the top right menu." %}</p>
+    <p class="text-muted">{% trans "If you believe this is incorrect, contact your manager." %}</p>
+{% endblock %}

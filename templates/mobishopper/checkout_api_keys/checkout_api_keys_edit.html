@@ -1,0 +1,26 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form_errors form type='all' %}
+        {% bootstrap_field form.name layout="horizontal" %}
+        {% bootstrap_field form.store layout="horizontal" %}
+        {% bootstrap_field form.is_active layout="horizontal" %}
+
+        {% buttonbox_save %}
+    </form>
+
+        {% if is_adding %}
+            <p class="text-warning">{% trans "The API key will be shown <strong>once</strong> after creation." %}</p>
+        {% else %}
+            {% if shown_key %}
+                <h2>{% trans "Created API Key" %}</h2>
+                <p>{% trans "An API key was created. Store it in a safe place, it won’t be shown again!" %}</p>
+                <label for="api-key" class="sr-only">{% trans "Created API Key" %}</label>
+                <input id="api-key" class="form-control form-control-lg" readonly value="{{ shown_key }}">
+            {% endif %}
+        {% endif %}
+{% endblock %}

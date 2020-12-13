@@ -1,0 +1,39 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% block content %}
+    {% if map_in_effect %}
+    <a class="btn btn-lg btn-primary" href="{% url "ms_maps:maps_show" map_in_effect.id %}">{% trans "Show current map" %}</a>
+    {% endif %}
+    <h2>{% trans "Aisles and subaisles" %}</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>{% trans "Aisles" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ aisles }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Subaisles" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ subaisles }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Global Aisles" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ global_aisles }}</strong>
+        </div>
+    </div>
+    <h2>{% trans "Product locations" %}</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>{% trans "Assigned locations" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ human }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Auto-assigned locations" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ auto }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Missing locations" %}</strong>
+            <strong class="display-3 d-block mt-0{% if missing %} text-danger{% endif %}">{{ missing }}</strong>
+        </div>
+    </div>
+{% endblock %}

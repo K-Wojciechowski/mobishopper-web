@@ -1,0 +1,45 @@
+{% load i18n %}
+{% load ms_extras %}
+{% load msd_extras %}
+{% if not page %}
+    {% no_results_msg %}
+{% else %}
+    {% start_copy_get_if show_order request %}
+    <table class="table table-hover table-vam">
+        <thead>
+        <tr>
+            <th>{% table_ord_helper "Name" "name" True %}</th>
+            {% if not is_coupon_set %}
+                <th>{% table_ord_helper "Product" "product__name" %}</th>
+                <th>{% table_ord_helper "Price" "price" %}</th>
+            {% endif %}
+            <th>{% trans "Is global" %}</th>
+            {% if is_coupon_set %}
+                <th>{% trans "Coupons in set" %}</th>
+            {% endif %}
+            <th>{% table_ord_helper "Validity" "date_started" %}</th>
+            <th>{% trans "Actions" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for d in page %}
+            <tr>
+                <td>{{ d.html_link }}</td>
+                {% if not is_coupon_set %}
+                    <td>{{ d.product.html_link }}</td>
+                    <td>{% money d.price %}</td>
+                {% endif %}
+                <td>{% bool_yesno d.is_global %}</td>
+                {% if is_coupon_set %}
+                    <td>{{ d.size }}</td>
+                {% endif %}
+                <td>{% validity_text d %}</td>
+                <td>
+                    <a class="btn btn-outline-info" href="{{ d.get_absolute_url }}">{% trans "Edit" %}</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% close_copy_get_if show_order %}
+{% endif %}

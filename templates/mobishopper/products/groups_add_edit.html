@@ -1,0 +1,29 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% bootstrap_form_errors form type='all' %}
+    {% csrf_token %}
+    {% bootstrap_field form.name layout="horizontal" %}
+    {% modal_item_selector form.vendor "product-vendor" vendor_name %}
+
+    {% subcat_menu_field form multiple=False required=True %}
+
+    {% if request.ms_store is None %}
+        {% bootstrap_field form.store layout="horizontal" %}
+    {% endif %}
+    {% bootstrap_field form.photo layout="horizontal" %}
+    {% bootstrap_field form.description layout="horizontal" %}
+    {% bootstrap_field form.date_started layout="horizontal" %}
+    {% if show_edit_warning %}
+        <p class="text-warning">{% trans "<strong>Warning:</strong> Editing a product group will create new revisions of all currently valid products in the group. Those revisions will have the same start date as the group." %}</p>
+    {% endif %}
+    {% buttonbox_save %}
+</form>
+{% endblock %}
+{% block extra_js %}
+    {{ form.media }}
+{% endblock %}

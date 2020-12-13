@@ -1,0 +1,46 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <strong>{% trans "All products" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ products_global_count }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Recently changed" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ products_global_recent_count }}</strong>
+        </div>
+        <div class="col-md-4">
+            <strong>{% trans "Upcoming changes" %}</strong>
+            <strong class="display-3 d-block mt-0">{{ products_global_upcoming_count }}</strong>
+        </div>
+    </div>
+    {% if ms_store %}
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <strong>{% trans "Products in store" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ products_local_count }}</strong>
+            </div>
+            <div class="col-md-4">
+                <strong>{% trans "Recently changed in store" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ products_local_recent_count }}</strong>
+            </div>
+            <div class="col-md-4">
+                <strong>{% trans "Upcoming changes in store" %}</strong>
+                <strong class="display-3 d-block mt-0">{{ products_local_upcoming_count }}</strong>
+            </div>
+        </div>
+    {% endif %}
+    <hr>
+    {% if products_upcoming %}
+        <h1>{% if ms_store %}{% trans "Upcoming changes in store" %}{% else %}{% trans "Upcoming changes" %}{% endif %}</h1>
+        {% products_table products_upcoming %}
+    {% endif %}
+    {% if products_recent %}
+        <h1>{% if ms_store %}{% trans "Recent changes in store" %}{% else %}{% trans "Recent changes" %}{% endif %}</h1>
+        {% products_table products_recent %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    {% if not subaisles %}
+        {% no_results_msg %}
+    {% else %}
+        <table class="table table-hover table-vam">
+            <thead>
+            <tr>
+                <th>{% trans "Subaisle" %}</th>
+                <th>{% trans "Description" %}</th>
+                <th>{% trans "Subcategory" %}</th>
+                <th>{% trans "Actions" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for subaisle in subaisles %}
+                <tr>
+                    <td>{{ subaisle.html_link }}</td>
+                    <td>{{ subaisle.description }}</td>
+                    <td>{{ subaisle.subcategory.html_link }}</td>
+                <td>
+                    <a class="btn btn-outline-info" href="{% url "ms_products:global_subaisles_edit" subaisle.id %}">{% trans "Edit" %}</a>
+                    <a class="btn btn-outline-danger" href="{% url "ms_products:global_subaisles_delete" subaisle.id %}">{% trans "Delete" %}</a>
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

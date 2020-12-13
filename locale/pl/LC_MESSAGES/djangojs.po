@@ -1,0 +1,313 @@
+# MobiShopper Web
+# Copyright (C) 2020, Krzysztof Wojciechowski
+# This file is distributed under the same license as the MobiShopper package.
+# Krzysztof Wojciechowski <kw@krzysztofwojciechowski.pl>, 2020
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-06 19:18+0100\n"
+"PO-Revision-Date: 2020-11-24 23:17+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: static/vue/app.js:1
+msgid "Close"
+msgstr "Zamknij"
+
+#: static/vue/app.js:1
+msgid "OK"
+msgstr "OK"
+
+#: static/vue/app.js:1
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: static/vue/app.js:1
+msgid "Page navigation"
+msgstr "Nawigacja pomiędzy stronami"
+
+#: static/vue/app.js:1
+msgid "Previous"
+msgstr "Poprzednia"
+
+#: static/vue/app.js:1
+msgid "Next"
+msgstr "Następna"
+
+#: static/vue/app.js:1
+msgid "Delete"
+msgstr "Usuń"
+
+#: static/vue/app.js:1
+msgid "indefinitely"
+msgstr "bez ograniczeń"
+
+#: static/vue/app.js:1
+msgid "from {date}"
+msgstr "od {date}"
+
+#: static/vue/app.js:1
+msgid "until {date}"
+msgstr "do {date}"
+
+#: static/vue/app.js:1
+msgid "yes"
+msgstr "tak"
+
+#: static/vue/app.js:1
+msgid "no"
+msgstr "nie"
+
+#: static/vue/app.js:1
+msgid "Select or type a property name…"
+msgstr "Wybierz lub wpisz nazwę właściwości…"
+
+#: static/vue/app.js:1
+msgid "Pick from map"
+msgstr "Wybierz z mapy"
+
+#: static/vue/app.js:1
+msgid "Location will revert to auto"
+msgstr "Zostanie przywrócona automatyczna lokalizacja"
+
+#: static/vue/app.js:1
+msgid "Location will be deleted"
+msgstr "Lokalizacja zostanie usunięta"
+
+#: static/vue/app.js:1
+msgid "Undo"
+msgstr "Cofnij"
+
+#: static/vue/app.js:1
+msgid "Special"
+msgstr "Specjalne"
+
+#: static/vue/app.js:1
+msgid "Revert to auto location"
+msgstr "Przywróć lokalizację automatyczną"
+
+#: static/vue/app.js:1
+msgid "Delete location"
+msgstr "Usuń lokalizację"
+
+#: static/vue/app.js:1
+msgid "Entrance"
+msgstr "Wejście"
+
+#: static/vue/app.js:1
+msgid "Exit"
+msgstr "Wyjście"
+
+#: static/vue/app.js:1
+msgid "Entrance + Exit"
+msgstr "Wejście i wyjście"
+
+#: static/vue/app.js:1
+msgid "Cash register"
+msgstr "Kasa"
+
+#: static/vue/app.js:1
+msgid "Product shelf (without subaisle)"
+msgstr "Półka z produktami (bez subalejki)"
+
+#: static/vue/app.js:1
+msgid "Space between aisles"
+msgstr "Przestrzeń pomiędzy alejkami"
+
+#: static/vue/app.js:1
+msgid "Subaisle"
+msgstr "Subalejka"
+
+#: static/vue/app.js:1
+msgid "Inaccessible tile"
+msgstr "Przestrzeń niedostępna"
+
+#: static/vue/app.js:1
+msgid "Aisles"
+msgstr "Alejki"
+
+#: static/vue/app.js:1
+msgid "Special tiles"
+msgstr "Specjalne punkty"
+
+#: static/vue/app.js:1
+msgid "Cursor (no changes)"
+msgstr "Kursor (bez zmian)"
+
+#: static/vue/app.js:1
+msgid "Add"
+msgstr "Dodaj"
+
+#: static/vue/app.js:1
+msgid "Store"
+msgstr "Sklep"
+
+#: static/vue/app.js:1
+msgid "Actions"
+msgstr "Akcje"
+
+#: static/vue/app.js:1
+msgid "(Permissions added for all stores)"
+msgstr "(Uprawnienia dodane dla wszystkich sklepów)"
+
+#: static/vue/app.js:1
+msgid "Select store to add…"
+msgstr "Wybierz sklep do dodania…"
+
+#: static/vue/app.js:1
+msgid "Select…"
+msgstr "Wybierz…"
+
+#: static/vue/app.js:1
+msgid "Search"
+msgstr "Szukaj"
+
+#: static/vue/app.js:1
+msgid "Select"
+msgstr "Wybierz"
+
+#: static/vue/app.js:1
+msgid "Details"
+msgstr "Szczegóły"
+
+#: static/vue/app.js:1
+msgid "No results found."
+msgstr "Nie znaleziono wyników."
+
+#: static/vue/app.js:1
+msgid "Loading…"
+msgstr "Ładowanie…"
+
+#: static/vue/app.js:1
+msgid "Field"
+msgstr "Pole"
+
+#: static/vue/app.js:1
+msgid "Value"
+msgstr "Wartość"
+
+#: static/vue/app.js:1
+msgid "An unexpected validation error occurred."
+msgstr "Wystąpił nieoczekiwany błąd walidacji."
+
+#: static/vue/app.js:1
+msgid "The following required fields are missing: "
+msgstr "Brakuje następujących wymaganych pól: "
+
+#: static/vue/app.js:1
+msgid "Store map"
+msgstr "Mapa sklepu"
+
+#: static/vue/app.js:1
+msgid "No map is available for this store at the selected validity time."
+msgstr "Nie jest dostępna mapa sklepu o podanym czasie obowiązywania."
+
+#: static/vue/app.js:1
+msgid "Filters"
+msgstr "Filtry"
+
+#: static/vue/app.js:1
+msgid "Name"
+msgstr "Nazwa"
+
+#: static/vue/app.js:1
+msgid "Vendor"
+msgstr "Producent"
+
+#: static/vue/app.js:1
+msgid "Select subcategory"
+msgstr "Wybierz subkategorię"
+
+#: static/vue/app.js:1
+msgid "Items per page:"
+msgstr "Elementy na stronę:"
+
+#: static/vue/app.js:1
+msgid "Show/hide store map"
+msgstr "Pokaż/ukryj mapę sklepu"
+
+#: static/vue/app.js:1
+msgid "Product"
+msgstr "Produkt"
+
+#: static/vue/app.js:1
+msgid "Validity"
+msgstr "Daty obowiązywania"
+
+#: static/vue/app.js:1
+msgid "Tile"
+msgstr "Kwadrat siatki"
+
+#: static/vue/app.js:1
+msgid "Changes in effect after:"
+msgstr "Zmiany obowiązują od:"
+
+#: static/vue/app.js:1
+msgid "Valid from"
+msgstr "Obowiązuje od"
+
+#: static/vue/app.js:1
+msgid "Save"
+msgstr "Zapisz"
+
+#: static/vue/app.js:1
+msgid "Undo all"
+msgstr "Cofnij wszystko"
+
+#: static/vue/app.js:1
+msgid "Show all"
+msgstr "Pokaż wszystko"
+
+#: static/vue/app.js:1
+msgid "Auto-assigned"
+msgstr "Automatycznie przypisane"
+
+#: static/vue/app.js:1
+msgid "Manually assigned"
+msgstr "Ręcznie przypisane"
+
+#: static/vue/app.js:1
+msgid "Missing location"
+msgstr "Brakująca lokalizacja"
+
+#: static/vue/app.js:1
+msgid "Unable to get product data!"
+msgstr "Nie udało się pobrać danych produktów!"
+
+#: static/vue/app.js:1
+msgid "Unable to get groups list!"
+msgstr "Nie udało się pobrać listy grup!"
+
+#: static/vue/app.js:1
+msgid "Failed to save changes!"
+msgstr "Nie udało się zapisać zmian!"
+
+#: static/vue/app.js:1
+msgid "Zoom:"
+msgstr "Powiększenie:"
+
+#: static/vue/app.js:1
+msgid "Resize the map:"
+msgstr "Zmień rozmiar mapy:"
+
+#: static/vue/app.js:1
+msgid "Resize"
+msgstr "Zmień rozmiar"
+
+#: static/vue/app.js:1
+msgid "Unable to save the map!"
+msgstr "Nie udało się zapisać mapy!"
+
+#: static/vue/chunk-vendors.js:12
+msgid "iterator"
+msgstr "iterator"

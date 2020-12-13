@@ -1,0 +1,24 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+<form action="" method="POST">
+    {% bootstrap_form_errors form type='all' %}
+    {% csrf_token %}
+    {% bootstrap_field form.name layout="horizontal" %}
+    {% bootstrap_field form.parent layout="horizontal" %}
+    {% bootstrap_field form.description layout="horizontal" %}
+    {% bootstrap_field form.visible layout="horizontal" %}
+    {% buttonbox_save %}
+</form>
+{% if recent_products %}
+    <hr>
+    <h2>{% trans "Recent products" %}</h2>
+    {% products_table recent_products %}
+    {% if id %}
+    <p class="text-center"><a class="" href="{% url "ms_products:subcategories_search" id %}">{% trans "Search for products" %}</a></p>
+    {% endif %}
+{% endif %}
+{% endblock %}

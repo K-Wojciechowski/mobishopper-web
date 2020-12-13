@@ -1,0 +1,15 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load i18n %}
+
+{% block content %}
+    <form action="" method="POST">{% csrf_token %}
+    <p>{% blocktrans %}Products with missing locations: <strong>{{ missing }}</strong>{% endblocktrans %}</p>
+    {% if missing == 0 %}
+    <p class="text-success">{% trans "All locations are assigned!" %}</p>
+    {% else %}
+        <p>{% trans "MobiShopper can auto-assign locations to products. This is possible only if subaisles have defined subcategories, and each subcategory is assigned to exactly one subaisle." %}</p>
+        <div class="buttonbox"><button type="submit" class="btn btn-lg btn-primary">{% bsiconbox "arrow-right-circle-fill" 20 "Auto-assign" %}</button></div>
+    {% endif %}
+    </form>
+{% endblock %}

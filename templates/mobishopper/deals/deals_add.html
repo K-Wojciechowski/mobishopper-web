@@ -1,0 +1,43 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+    <form action="" method="POST">
+        {% bootstrap_form_errors form type='all' %}
+        {% csrf_token %}
+        {% bootstrap_field form.name layout="horizontal" %}
+        {% if is_coupon_set %}
+            {% modal_item_selector form.coupons "form-coupons" "" %}
+        {% else %}
+            {% modal_item_selector form.product "form-product" product_name %}
+            {% bootstrap_field form.price layout="horizontal" %}
+        {% endif %}
+
+        {% bootstrap_field form.date_started layout="horizontal" %}
+        {% bootstrap_field form.date_ended layout="horizontal" %}
+
+
+        {% if request.ms_store is None %}
+            {% bootstrap_field form.is_global layout="horizontal" %}
+            <div id="stores-box">
+                {% bootstrap_field form.stores layout="horizontal" %}
+            </div>
+        {% endif %}
+
+        {% if is_coupon or is_coupon_set %}
+            {% bootstrap_field form.one_use layout="horizontal" %}
+            {% bootstrap_field form.require_account layout="horizontal" %}
+        {% endif %}
+        {% buttonbox_save %}
+    </form>
+{% endblock %}
+{% block js_config %}
+    {{ form.media }}
+    {% if request.ms_store is None %}
+        <script>
+            registerActivatorCheckbox("{{ form.is_global.name }}", "stores-box", "inverse");
+        </script>
+    {% endif %}
+{% endblock %}

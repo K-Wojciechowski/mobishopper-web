@@ -1,0 +1,10 @@
+{% load i18n %}
+{% if page.paginator.num_pages > 1 %}
+<nav aria-label="{% trans "Page navigation" %}" class="ms-pagination">
+    <ul class="pagination">
+        {% for p in page.paginator.page_range %}
+        <li class="page-item {% if p == page.number %} active{% endif %}"><a class="page-link" href="{{ ms_extendable_url }}page={{ p }}">{{ p }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}

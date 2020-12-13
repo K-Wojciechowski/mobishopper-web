@@ -1,0 +1,55 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msd_extras %}
+{% load bootstrap4 %}
+{% block extra_title %}
+    <a class="btn btn-outline-success" href="{% url "ms_maps:aisles_add" %}">{% trans "Add new aisle" %}</a>
+    <a class="btn btn-outline-success" href="{% url "ms_maps:subaisles_add" %}">{% trans "Add new subaisle" %}</a>
+{% endblock %}
+{% block content %}
+
+    {% show_all_chooser show_all only_valid=False %}
+    {% if not aisles %}
+        {% no_results_msg %}
+    {% else %}
+        <table class="table table-hover table-vam">
+            <thead>
+            <tr>
+                <th>{% trans "Aisle" %}</th>
+                <th>{% trans "Code" %}</th>
+                {% if show_all %}<th>{% trans "Visible" %}</th>{% endif %}
+                <th>{% trans "Has subcategories" %}</th>
+                <th>{% trans "Actions" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for aisle, subaisles in aisles %}
+                <tr>
+                    <td><strong>{{ aisle.html_link }}</strong></td>
+                    <td>{{ aisle.display_code }}</td>
+                    {% if show_all %}<td>{% bool_yesno aisle.visible %}</td>{% endif %}
+                    <td></td>
+                    <td>
+                        <a class="btn btn-outline-info" href="{% url "ms_maps:aisles_edit" aisle.id %}">{% trans "Edit" %}</a>
+                        <a class="btn btn-outline-danger" href="{% url "ms_maps:aisles_delete" aisle.id %}">{% trans "Delete" %}</a>
+                    </td>
+                </tr>
+                {% for subaisle in subaisles %}
+                    <tr>
+                        <td class="pl-4">› {{ subaisle.html_link }}</td>
+                        <td>{{ subaisle.display_code }}</td>
+                        {% if show_all %}<td>{% bool_yesno subaisle.visible %}</td>{% endif %}
+                        <td>{% bool_yesno subaisle.has_subcategories %}</td>
+                        <td>
+                            <a class="btn btn-outline-info" href="{% url "ms_maps:subaisles_edit" subaisle.id %}">{% trans "Edit" %}</a>
+                            <a class="btn btn-outline-danger" href="{% url "ms_maps:subaisles_delete" subaisle.id %}">{% trans "Delete" %}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    {% paginator overrides %}
+{% endblock %}

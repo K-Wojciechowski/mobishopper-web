@@ -1,0 +1,7 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msp_extras %}
+{% block content %}
+<p>{% trans "There is no valid map for the current store." %} <a href="{% url "ms_maps:maps_list" %}">{% trans "Show map history" %}</a></p>
+{% endblock %}

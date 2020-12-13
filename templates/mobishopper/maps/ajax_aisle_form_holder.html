@@ -1,0 +1,12 @@
+{% load i18n %}
+{% load bootstrap4 %}
+{% load msm_extras %}
+{% bootstrap_messages %}
+
+{% if form_name == "aisle" %}
+    {% aisle_form form %}
+{% elif form_name == "subaisle" %}
+    {% subaisle_form form copy_global run_js=True %}
+{% else %}
+    ERROR: Invalid form type.
+{% endif %}

@@ -1,0 +1,13 @@
+{% extends "mobishopper/base_sidebar.html" %}
+{% load i18n %}
+{% load ms_extras %}
+{% load msd_extras %}
+{% load bootstrap4 %}
+{% block content %}
+    {% deals_search_form search_form is_coupon_set %}
+    {% deals_table page request show_order is_coupon_set %}
+    {% paginator page %}
+{% endblock %}
+{% block extra_js %}
+    {{ search_form.media }}
+{% endblock %}
